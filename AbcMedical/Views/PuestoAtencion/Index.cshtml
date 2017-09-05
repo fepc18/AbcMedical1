@@ -1,0 +1,70 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Puestos de Atención
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+
+        @model IEnumerable<Entities.Administracion.PuestoAtencion>
+
+        @{
+            ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
+        }
+
+       
+        <p>
+            @Html.ActionLink("Crear Puesto de Atención", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+        
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Coordinador)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefonos)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Coordinador)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefonos)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.PuestoAtencionId }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.PuestoAtencionId }) |
+                        @Html.ActionLink("Profesionales", "Profesionales", new { id = item.PuestoAtencionId }) |
+                        @Html.ActionLink("Usuarios", "Usuarios", new { id = item.PuestoAtencionId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</section>

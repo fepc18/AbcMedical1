@@ -1,0 +1,60 @@
+﻿@model Entities.Administracion.PuestoAtencion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PuestoAtencion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coordinador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coordinador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefonos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefonos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PuestoAtencionId }) |
+    @Html.ActionLink("Regresar al listado", "Index")
+</p>
