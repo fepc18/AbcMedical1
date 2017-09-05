@@ -42,8 +42,8 @@ namespace AbcMedical.Controllers
         // GET: Profesional/Create
         public ActionResult Create()
         {
-            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Codigo");
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura");
+            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Descripcion");
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion");
             ViewBag.UsuarioId = new SelectList(db.Usuarios, "UsuarioId", "Login");
             return View();
         }
@@ -65,8 +65,8 @@ namespace AbcMedical.Controllers
             }
 
             
-            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Codigo", profesional.EspecialidadId);
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura", profesional.TipoIdentificacionId);
+            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Descripcion", profesional.EspecialidadId);
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion", profesional.TipoIdentificacionId);
             ViewBag.UsuarioId = new SelectList(db.Usuarios, "UsuarioId", "Login", profesional.UsuarioId);
             return View(profesional);
         }
@@ -84,8 +84,8 @@ namespace AbcMedical.Controllers
                 return HttpNotFound();
             }
             
-            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Codigo", profesional.EspecialidadId);
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura", profesional.TipoIdentificacionId);
+            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Descripcion", profesional.EspecialidadId);
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion", profesional.TipoIdentificacionId);
             ViewBag.UsuarioId = new SelectList(db.Usuarios, "UsuarioId", "Login", profesional.UsuarioId);
             return View(profesional);
         }
@@ -106,8 +106,8 @@ namespace AbcMedical.Controllers
                 return RedirectToAction("Index");
             }
             
-            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Codigo", profesional.EspecialidadId);
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura", profesional.TipoIdentificacionId);
+            ViewBag.EspecialidadId = new SelectList(db.Especialidads, "EspecialidadId", "Descripcion", profesional.EspecialidadId);
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion", profesional.TipoIdentificacionId);
             ViewBag.UsuarioId = new SelectList(db.Usuarios, "UsuarioId", "Login", profesional.UsuarioId);
             return View(profesional);
         }
