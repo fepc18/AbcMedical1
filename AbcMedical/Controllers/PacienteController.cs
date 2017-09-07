@@ -41,14 +41,14 @@ namespace AbcMedical.Controllers
         // GET: Paciente/Create
         public ActionResult Create()
         {
-            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Codigo");
+            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Descripcion");
             ViewBag.CompanyClientId = new SelectList(db.CompanyClient, "CompanyClientId", "RazonSocial");
             ViewBag.EscolaridadId = new SelectList(db.Escolaridads, "EscolaridadId", "Descripcion");
             ViewBag.EstadoCivilId = new SelectList(db.EstadoCivils, "EstadoCivilId", "Descripcion");
             ViewBag.EtniaId = new SelectList(db.Etnias, "EtniaId", "Descripcion");
             ViewBag.ProfesionId = new SelectList(db.Profesions, "ProfesionId", "Descripcion");
             ViewBag.RegimenId = new SelectList(db.Regimen, "RegimenId", "Descripcion");
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura");
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion");
             ViewBag.TipoSangreId = new SelectList(db.TipoSangres, "TipoSangreId", "Descripcion");
             ViewBag.TipoUsuarioId = new SelectList(db.TipoUsuarios, "TipoUsuarioId", "Descripcion");
             return View();
@@ -70,14 +70,14 @@ namespace AbcMedical.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Codigo", paciente.CiudadId);
+            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Descripcion", paciente.CiudadId);
             ViewBag.CompanyClientId = new SelectList(db.CompanyClient, "CompanyClientId", "RazonSocial", paciente.CompanyClientId);
             ViewBag.EscolaridadId = new SelectList(db.Escolaridads, "EscolaridadId", "Descripcion", paciente.EscolaridadId);
             ViewBag.EstadoCivilId = new SelectList(db.EstadoCivils, "EstadoCivilId", "Descripcion", paciente.EstadoCivilId);
             ViewBag.EtniaId = new SelectList(db.Etnias, "EtniaId", "Descripcion", paciente.EtniaId);
             ViewBag.ProfesionId = new SelectList(db.Profesions, "ProfesionId", "Descripcion", paciente.ProfesionId);
             ViewBag.RegimenId = new SelectList(db.Regimen, "RegimenId", "Descripcion", paciente.RegimenId);
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura", paciente.TipoIdentificacionId);
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion", paciente.TipoIdentificacionId);
             ViewBag.TipoSangreId = new SelectList(db.TipoSangres, "TipoSangreId", "Descripcion", paciente.TipoSangreId);
             ViewBag.TipoUsuarioId = new SelectList(db.TipoUsuarios, "TipoUsuarioId", "Descripcion", paciente.TipoUsuarioId);
             return View(paciente);
@@ -95,14 +95,14 @@ namespace AbcMedical.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Codigo", paciente.CiudadId);
+            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Descripcion", paciente.CiudadId);
             ViewBag.CompanyClientId = new SelectList(db.CompanyClient, "CompanyClientId", "RazonSocial", paciente.CompanyClientId);
             ViewBag.EscolaridadId = new SelectList(db.Escolaridads, "EscolaridadId", "Descripcion", paciente.EscolaridadId);
             ViewBag.EstadoCivilId = new SelectList(db.EstadoCivils, "EstadoCivilId", "Descripcion", paciente.EstadoCivilId);
             ViewBag.EtniaId = new SelectList(db.Etnias, "EtniaId", "Descripcion", paciente.EtniaId);
             ViewBag.ProfesionId = new SelectList(db.Profesions, "ProfesionId", "Descripcion", paciente.ProfesionId);
             ViewBag.RegimenId = new SelectList(db.Regimen, "RegimenId", "Descripcion", paciente.RegimenId);
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura", paciente.TipoIdentificacionId);
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion", paciente.TipoIdentificacionId);
             ViewBag.TipoSangreId = new SelectList(db.TipoSangres, "TipoSangreId", "Descripcion", paciente.TipoSangreId);
             ViewBag.TipoUsuarioId = new SelectList(db.TipoUsuarios, "TipoUsuarioId", "Descripcion", paciente.TipoUsuarioId);
             return View(paciente);
@@ -121,14 +121,14 @@ namespace AbcMedical.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Codigo", paciente.CiudadId);
+            ViewBag.CiudadId = new SelectList(db.Ciudads, "CiudadId", "Descripcion", paciente.CiudadId);
             ViewBag.CompanyClientId = new SelectList(db.CompanyClient, "CompanyClientId", "RazonSocial", paciente.CompanyClientId);
             ViewBag.EscolaridadId = new SelectList(db.Escolaridads, "EscolaridadId", "Descripcion", paciente.EscolaridadId);
             ViewBag.EstadoCivilId = new SelectList(db.EstadoCivils, "EstadoCivilId", "Descripcion", paciente.EstadoCivilId);
             ViewBag.EtniaId = new SelectList(db.Etnias, "EtniaId", "Descripcion", paciente.EtniaId);
             ViewBag.ProfesionId = new SelectList(db.Profesions, "ProfesionId", "Descripcion", paciente.ProfesionId);
             ViewBag.RegimenId = new SelectList(db.Regimen, "RegimenId", "Descripcion", paciente.RegimenId);
-            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Abreviatura", paciente.TipoIdentificacionId);
+            ViewBag.TipoIdentificacionId = new SelectList(db.TipoIdentificacion, "TipoIdentificacionId", "Descripcion", paciente.TipoIdentificacionId);
             ViewBag.TipoSangreId = new SelectList(db.TipoSangres, "TipoSangreId", "Descripcion", paciente.TipoSangreId);
             ViewBag.TipoUsuarioId = new SelectList(db.TipoUsuarios, "TipoUsuarioId", "Descripcion", paciente.TipoUsuarioId);
             return View(paciente);

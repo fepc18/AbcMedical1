@@ -5,16 +5,16 @@
     </header>
     <div class="panel-body" style="padding-bottom:40px;">
 
-@model Entities.Administracion.Profesional
+        @model Entities.Administracion.Profesional
 
-@{
-    ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
-}
+        @{
+            ViewBag.Title = "Delete";
+            Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
+        }
 
         <h3>Eliminar</h3>
 
-        <h>Está seguro de eliminar el profesional: @Html.DisplayFor(model => model.Codigo) - @Html.DisplayFor(model => model.PrimerNombre) @Html.DisplayFor(model => model.PrimerApellido)?</h>
+        <h4>Está seguro de eliminar el profesional: @Html.DisplayFor(model => model.Codigo) - @Html.DisplayFor(model => model.PrimerNombre) @Html.DisplayFor(model => model.PrimerApellido)?</h4>
         <div>
             <hr />
 
@@ -37,3 +37,5 @@
 
             }
         </div>
+    </div>
+</section>

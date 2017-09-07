@@ -1,102 +1,105 @@
-﻿@model IEnumerable<Entities.Administracion.Paciente>
+﻿<section class="panel">
+    <header class="panel-heading">
+        Pacientes
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
-}
+        @model IEnumerable<Entities.Administracion.Paciente>
 
-<h2>Index</h2>
+        @{
+            ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
+        }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-      
-        <th>
-            Tipo de <br />
-            Identificación
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Identificacion)
-        </th>
-        <th>
-            Nombre
-        </th>
-        <th>
-            Género
-        </th>
-        <th>
-            Fecha de <br /> Nacimiento
-
-        </th>
         
-        <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Barrio)
-        </th>
-        <th>
-            Teléfonos
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CorreoElectronico)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.Activo)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-     
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoIdentificacion.Abreviatura)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Identificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrimerNombre)
-            
-            @Html.DisplayFor(modelItem => item.SegundoNombre)
-            
-            @Html.DisplayFor(modelItem => item.PrimerApellido)
-            
-            @Html.DisplayFor(modelItem => item.SegundoApellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sexo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaNacimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Barrio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelefonoResidencia)
-        -
-            @Html.DisplayFor(modelItem => item.TelefonoOficina)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CorreoElectronico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Activo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.PacienteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PacienteId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.PacienteId })
-        </td>
-    </tr>
-}
+        <p>
+            @Html.ActionLink("Crear Paciente", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+        <table class="table">
+            <tr>
 
-</table>
+                <th>
+                    Tipo de <br />
+                    Identificación
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Identificacion)
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Fecha de <br /> Nacimiento
+
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Barrio)
+                </th>
+                <th>
+                    Teléfonos
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CorreoElectronico)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Activo)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoIdentificacion.Abreviatura)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Identificacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerNombre)
+
+                        @Html.DisplayFor(modelItem => item.SegundoNombre)
+
+                        @Html.DisplayFor(modelItem => item.PrimerApellido)
+
+                        @Html.DisplayFor(modelItem => item.SegundoApellido)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Barrio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelefonoResidencia)
+                        -
+                        @Html.DisplayFor(modelItem => item.TelefonoOficina)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CorreoElectronico)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Activo)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.PacienteId }) |                        
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.PacienteId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>
