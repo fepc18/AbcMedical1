@@ -48,4 +48,6 @@ public class AbcMedicalContext : DbContext
     public System.Data.Entity.DbSet<Entities.Administracion.TipoUsuario> TipoUsuarios { get; set; }
 
     public System.Data.Entity.DbSet<Entities.Administracion.TipoSangre> TipoSangres { get; set; }
+
+    public System.Data.Entity.DbSet<Entities.Seguridad.Perfil> Perfils { get; set; }
 }

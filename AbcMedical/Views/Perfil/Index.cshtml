@@ -1,0 +1,46 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Perfiles
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+        @model IEnumerable<Entities.Seguridad.Perfil>
+
+        @{
+            ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_LayoutSecurity.cshtml";
+        }
+
+        <p>
+            @Html.ActionLink("Crear Perfil", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PerfilId }) |                        
+                        @Html.ActionLink("Permisos", "Permiso", new { id = item.PerfilId }) |  
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PerfilId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

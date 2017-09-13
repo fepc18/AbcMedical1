@@ -19,23 +19,19 @@ namespace Entities.Seguridad
         [Required(ErrorMessage = "Campo Requerido")]
         public string Login { get; set; }
         [Required(ErrorMessage = "Campo Requerido")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Campo Requerido")]
-        [Display(Name = "Tipo de Identificación")]
-        public int TipoIdentificacionId { get; set; }
-        public virtual TipoIdentificacion TipoIdentificacion { get; set; }
-        [Required(ErrorMessage = "Campo Requerido")]
-        [Display(Name = "Identificación")]
-        public string Identificacion { get; set; }
-        [Required(ErrorMessage = "Campo Requerido")]
-        public string Nombres { get; set; }
-        [Required(ErrorMessage = "Campo Requerido")]
-        public string Apellidos { get; set; }
-        public string FechaIngreso { get; set; }
+        [Display(Name = "Correo Electrónico")]
+        [RegularExpression("^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$", ErrorMessage = "Must be a valid email")]
+        public string CorreoElectronico { get; set; }
+        public DateTime FechaIngreso { get; set; }
         public Boolean Activo { get; set; }
         public Boolean Bloqueado { get; set; }
         [Required(ErrorMessage = "Campo Requerido")]
         public int PerfilId { get; set; }
         public virtual Perfil Perfil { get; set; }
+        public Boolean CambiarPassword { get; set; }
     }
 }

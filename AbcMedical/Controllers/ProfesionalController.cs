@@ -21,7 +21,7 @@ namespace AbcMedical.Controllers
             int CompanyClientId = Convert.ToInt16(System.Web.HttpContext.Current.Session["CompanyClientId"]);
             var profesionals = db.Profesionals.Include(p => p.Especialidad).Include(p => p.TipoIdentificacion).Include(p => p.Usuario);
             //return View(profesionals.Where(x => x.CompanyClientId == CompanyClientId).ToList());
-            return View(profesionals.ToList());
+            return View(profesionals.Where(x=>x.CompanyClientId==CompanyClientId).ToList());
         }
 
         // GET: Profesional/Details/5
