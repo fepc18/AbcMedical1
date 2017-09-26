@@ -33,5 +33,6 @@ namespace Entities.Seguridad
         public int PerfilId { get; set; }
         public virtual Perfil Perfil { get; set; }
         public Boolean CambiarPassword { get; set; }
+        public int IntentosFallidos { get; set; }
     }
 }

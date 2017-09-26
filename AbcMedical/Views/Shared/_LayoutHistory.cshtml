@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html ng-app="admisiones" ng-cloak>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+   
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-i18n/angular-locale_es-co.js"></script>
+    <script src="~/lib/angular-animate/angular-animate.js"></script>
+    <script src="~/lib/angular-aria/angular-aria.js"></script>
+    <script src="~/lib/angular-resource/angular-resource.js"></script>
+    <script src="~/lib/angular-route/angular-route.js"></script>
+    <script src="~/lib/angular-sanitize/angular-sanitize.js"></script>
+    @*<script src="~/lib/angular-tree-control/angular-tree-control.js"></script>*@
+
+    <script src="~/lib/angular-filter/dist/angular-filter.min.js"></script>
+    <script src="~/lib/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
+    <script src="~/Content/app.js"></script>
+    <script src="~/Content/app-run.js"></script>    
+    <script src="~/Content/app-route.js"></script>
+    <script src="~/Content/app-interceptor.js"></script>
+    <script src="~/Content/app/History/History.js"></script>
+    
+
+    <script src="~/Content/factories/tools/fac-memory.js"></script>
+    <script src="~/Content/factories/tools/fac-navigation.js"></script>
+    <script src="~/Content/factories/tools/fac-regex.js"></script>
+    
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <i class="fa fa-bars"></i>
+        </div>
+        <!--logo start-->
+        <a href="index.html" class="logo">
+            <!--   <img src="~/Content/Images/logo-app.png" />ABC<span>Medical</span>-->
+        </a>
+        <div class="nav notify-row">
+            <button type="submit" class="btn btn-info">Nuevo Registro</button>
+        </div>
+        <!--logo end-->
+        <div class="top-nav ">
+            <!--search & user info start-->
+            <ul class="nav pull-right top-menu">
+                
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <!-- <img alt="" src="img/avatar1_small.jpg">-->
+                        <span class="username">Jhon Doue</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <div class="log-arrow-up"></div>
+                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                    </ul>
+                </li>
+                <li class="sb-toggle-right">
+                    <i class="fa  fa-align-right"></i>
+                </li>
+                <!-- user login dropdown end -->
+            </ul>
+            <!--search & user info end-->
+        </div>
+    </header>
+   
+        <section id="container">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <section class="panel panel-primary">
+                                    <header class="panel-heading">
+                                        <i class="fa fa-folder-open-o"></i>   Abrir Historia
+                                    </header>
+                                    <div class="panel-body">
+                                        <form role="form">
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+
+                                                    <label for="exampleInputEmail1">Identificación</label>
+                                                    <input class="form-control" id="InputIdentificacion" placeholder="Ingrese Identificación">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="submit" class="btn btn-info">Buscar</button>
+                                            </div>
+                                            
+                                        </form>
+
+                                    </div>
+                                </section>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-lg-12  col-md-12 ">
+                                <section class="panel panel-primary">
+                                    <header class="panel-heading">
+                                        <i class="fa fa-user"></i>    Datos del Paciente
+                                    </header>
+                                    <div class="panel-body">
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label for="exampleInputEmail1"><b>Felipe Esteban Pabón Cortes</b></label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleInputEmail1">Identificación:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleInputEmail1"><b>1.085.263.418</b></label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleInputEmail1">Género:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleInputEmail1"><b>Másculino</b></label>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-info">Actualizar Datos</button>
+
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </section>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <section class="panel panel-primary">
+                                    <header class="panel-heading">
+                                        <i class="fa fa-clock-o"></i> Historia Clínico
+                                    </header>
+                                    <div class="panel-body">
+                                        <div class="table-responsive" >
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        
+                                                        <th>Table heading</th>
+                                                        <th>Table heading</th>
+                                                        <th>Table heading</th>
+                                                        
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Table cell</td>
+                                                        <td>Table cell</td>
+                                                        <td>></td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Table cell</td>
+                                                        <td>Table cell</td>
+                                                        <td>></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Table cell</td>
+                                                        <td>Table cell</td>
+                                                        <td>></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+                        </div>
+                      
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            @RenderBody()
+                        </div>
+                </div>
+            </section>
+            </section>
+
+
+ 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

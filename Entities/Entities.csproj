@@ -59,6 +59,7 @@
     <Compile Include="Administracion\TipoIdentificacion.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\ChangePassword.cs" />
     <Compile Include="Seguridad\Login.cs" />
     <Compile Include="Seguridad\Perfil.cs" />
     <Compile Include="Seguridad\Usuario.cs" />

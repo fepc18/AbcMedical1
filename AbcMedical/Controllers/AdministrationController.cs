@@ -10,6 +10,8 @@ namespace AbcMedical.Controllers
     {
         public ActionResult Index()
         {
+            var user = (Usuario)System.Web.HttpContext.Current.Session["User"];
+            ViewBag.Username = user.Login;
             ViewBag.Title = "Home Page";
 
             return View();

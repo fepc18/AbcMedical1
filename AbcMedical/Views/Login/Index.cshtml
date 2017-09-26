@@ -1,45 +1,64 @@
 ﻿@model Entities.Seguridad.Login
 @{
-    ViewBag.Title = "Iniciar sesión";
+    ViewBag.Title = "";
 }
 
 <h3>@ViewBag.Title.</h3>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Login", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                <input type="hidden" name="CompanyClient" id="CompanyClient" value="1" />
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Iniciar sesión" class="btn btn-default" />
-                    </div>
-                </div>
+    @Html.AntiForgeryToken()
+<div class="col-md-10 col-md-offset-1 main">
+    <div class="col-md-6 left-side">
+        <center>
+            <img src="~/Content/Images/logo-companies/1.png" />
+        </center>
+    </div><!--col-sm-6-->
 
+    <div class="col-md-6 right-side">
+        <h3>Login</h3>
 
+        <!--Form with header-->
+        <div class="form">
+            <input type="hidden" name="CompanyClient" id="CompanyClient" value="1" />
+            <div class="form-group">
+                <label for="form2">Usuario / E-mail</label>
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control input-lg" })
+                    @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="form2">Contraseña</label>
+                <div class="col-md-12">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-xs-center">
+                    <button type="submit" class="btn btn-deep-purple">Iniciar sesión</button>
+                </div>
+            </div>
+            @if (ViewBag.viewError == true)
+            {
+            <div class="alert alert-block alert-danger fade in">
+                <button data-dismiss="alert" class="close close-sm" type="button">
+                    <i class="fa fa-times"></i>
+                </button>
+                <strong>Error de autenticación!</strong> @ViewBag.message
+            </div>
             }
-        </section>
-    </div>
 
+            </div>
+        <!--/Form with header-->
+
+    </div><!--col-sm-6-->
+
+    
 </div>
 
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

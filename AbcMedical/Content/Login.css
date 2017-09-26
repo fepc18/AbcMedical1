@@ -3,7 +3,7 @@
 
 
 #playground-container {
-    height: 500px;
+    height: 200px;
     overflow: hidden !important;
     
 }
@@ -62,7 +62,7 @@ box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.24);}
 	padding:0px 0px 0px;
 	background:#FFF;
 	background-size:cover;
-	min-height:514px;
+	
 }
 	.right-side h3{
 	font-size: 30px;

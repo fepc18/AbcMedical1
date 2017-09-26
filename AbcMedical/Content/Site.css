@@ -179,6 +179,21 @@ a, a:hover, a:focus {
     background: #2a3542;
     overflow-y: scroll;
 }
+#sidebarHistory {
+    width: 230px;
+    height: 100%;
+    position: fixed;
+    background: #2a3542;
+    overflow-y: scroll;
+}
+
+#sidebar {
+    width: 210px;
+    height: 100%;
+    position: fixed;
+    background: #2a3542;
+    overflow-y: scroll;
+}
 
 #sidebar ul li {
     position: relative;
@@ -335,7 +350,7 @@ ul.sidebar-menu li a.active i {
 /*main content*/
 
 #main-content {
-    margin-left: 210px;
+    margin-left: 230px;
 }
 
 .header, .footer {
@@ -681,7 +696,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 
 /*search*/
-
+/*
 .search {
     margin-top: 6px ;
     width: 20px;
@@ -695,7 +710,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     background: url("../img/search-icon.png") no-repeat 10px 8px;
     padding:0 5px 0 35px;
     color: #000;
-}
+}*/
 
 
 .search:focus {
@@ -726,6 +741,18 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     font-size: 20px;
 }
 
+.sidebarHistory-toggle-box {
+    float: left;
+    padding-right: 15px;
+    margin-top: 20px;
+}
+
+.sidebarHistory-toggle-box .fa-bars {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+}
+
 
 .sidebar-closed > #sidebar > ul {
     display: none;
@@ -737,6 +764,18 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .sidebar-closed #sidebar {
     margin-left: -210px;
+}
+
+.sidebar-closed > #sidebarHistory > ul {
+    display: none;
+}
+
+.sidebar-closed #main-content {
+    margin-left: 0px;
+}
+
+.sidebar-closed #sidebarHistory {
+    margin-left: -230px;
 }
 
 /*state overview*/
@@ -776,6 +815,10 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .state-overview .value {
     width: 58%;
     padding-top: 21px;
+}
+
+.state-overview .violet {
+    background: #8175c7;
 }
 
 .state-overview .terques {
@@ -6120,7 +6163,7 @@ header.blue-bg ul.top-menu > li > a:focus .caret{
     border-top-color: #000;
 }
 
-
+/*
 
 header.green-bg .search,
 header.dark-bg .search ,
@@ -6138,7 +6181,7 @@ header.blue-bg .search  {
     background: url("../img/search-icon-white.png") no-repeat 10px 8px;
     padding:0 5px 0 35px;
     color: #000;
-}
+}*/
 
 
 header.green-bg .search:focus,

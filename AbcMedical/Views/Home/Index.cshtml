@@ -1,10 +1,66 @@
-﻿
-<div class="row">
-    <div class="col-md-6">
-        @Html.ActionLink("Administración", "goAdministration") 
-    </div>
-    <div class="col-md-6">
-        @Html.ActionLink("Seguridad", "goSecurity")    
-    </div>
-    
-</div>
+﻿@model Entities.Seguridad.Login
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>    
+        <section class="wrapper">
+            <div class="row state-overview">
+
+                <a href="~/Home/goAdministration">
+                    <div class="col-lg-6 col-md-12 col-xs-12 ">
+                        <section class="panel">
+                            <div class="symbol terques">
+                                <i class="fa fa-cog"></i>
+                            </div>
+                            <div class="value">
+                                <h1 class="count">Administración</h1>
+                                <p>Admininistra los parámetros para el uso de la aplicación</p>
+                            </div>
+                        </section>
+                    </div>
+                </a>
+
+                <div class="col-lg-6 col-md-12 col-xs-12 ">
+                    <a href="/Home/goSecurity">
+                        <section class="panel">
+                            <div class="symbol red">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                            <div class="value">
+                                <h1 class="count2">Seguridad</h1>
+                                <p>Administra los usuarios y restricciones a la aplicación</p>
+                            </div>
+                        </section>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-12 col-xs-12 ">
+                    <section class="panel">
+                        <div class="symbol violet">
+                            <i class="fa fa-files-o"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class="count3">Historia Clinica</h1>
+                            <p>Gestión de registros clínicos e historial de atenciones a los pacientes</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-6 col-md-12 col-xs-12 ">
+                    <section class="panel">
+                        <div class="symbol blue">
+                            <i class="fa fa-image"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class="count4">Digitalización</h1>
+                            <p>Administra los documentos y/o anexos digitalizados de los pacientes</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Abc Medical</p>
+            </footer>
+        </section>
+    </section>
+
+
