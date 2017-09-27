@@ -1,9 +1,9 @@
 ﻿<section class="panel">
     <header class="panel-heading">
-        Diagnósticos
+        Usuarios
     </header>
     <div class="panel-body" style="padding-bottom:40px;">
-        @model Entities.Seguridad.Perfil
+        @model Entities.Seguridad.Usuario
 
         @{
             ViewBag.Title = "Delete";
@@ -11,9 +11,9 @@
         }
 
        
-            <h3>Eliminar</h3>
+            <h3>Desbloquar</h3>
 
-            <h4>Está seguro de eliminar el perfil: @Html.DisplayFor(model => model.Codigo) - @Html.DisplayFor(model => model.Descripcion)?</h4>
+            <h4>Está seguro de desbloquear el usuario: @Html.DisplayFor(model => model.Login)?</h4>
             <div>
 
                 <hr />
@@ -21,11 +21,11 @@
                 @using (Html.BeginForm())
             {
                     @Html.AntiForgeryToken()
-
+                    @Html.HiddenFor(model => model.UsuarioId)
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-offset-2 col-md-5">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-trash-o"></i> Eliminar</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-trash-o"></i> Guardar</button>
                             </div>
                             <div class="col-md-4">
 

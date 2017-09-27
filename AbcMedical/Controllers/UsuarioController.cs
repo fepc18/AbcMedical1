@@ -104,6 +104,96 @@ namespace AbcMedical.Controllers
             return View(usuario);
         }
 
+        public ActionResult Desbloquear(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Desbloquear(Usuario usuario)
+        {
+            var user = db.Usuarios.Find(usuario.UsuarioId);
+            user.Bloqueado = false;
+            user.IntentosFallidos = 0;
+
+            db.Entry(usuario).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");           
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(ChangePassword change)
+        {
+
+            var usuario = db.Usuarios.Find(change.UsuarioId);
+            if (usuario.Password.Equals(change.ClaveAntigua))
+            {
+                if (change.ClaveNueva.Equals(change.ConfirmarClaveNueva))
+                {
+                    usuario.Bloqueado = false;
+                    usuario.IntentosFallidos = 0;
+                    usuario.CambiarPassword = false;
+                    usuario.Password = change.ClaveNueva;
+                    db.Entry(usuario).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index","Home");
+                }
+                else
+                {
+                    ViewBag.viewError = true;
+                    ViewBag.message = "Verifica la confirmación de la contraseña.";
+                }
+            }
+            else
+            {
+                ViewBag.viewError = true;
+                ViewBag.message = "La contraseña actual no es correcta.";
+            }
+            return View();
+        }
+
+        public ActionResult ReasignarClave(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }            
+            return View(usuario);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ReasignarClave(Usuario usuario)
+        {
+
+            var user = db.Usuarios.Find(usuario.UsuarioId);
+            user.Bloqueado = false;
+            user.IntentosFallidos = 0;
+            user.Password = usuario.Password;
+            user.CambiarPassword = true;
+
+            db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         // GET: Usuario/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -130,6 +220,19 @@ namespace AbcMedical.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ChangePassword()
+        {
+
+
+            var user = (Usuario)System.Web.HttpContext.Current.Session["User"];
+            ViewBag.Username = user.Login;
+            //var user = db.Usuarios.Where(x => x.Login == login.Username).Where(x=>x.CompanyClientId==1).FirstOrDefault();            
+
+            var change = new ChangePassword();
+            change.UsuarioId = user.UsuarioId;
+
+            return View(change);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -27,62 +27,71 @@ namespace AbcMedical.Controllers
             ViewBag.viewError = false;
 
             var userGeneral= db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username).FirstOrDefault();
-            if (userGeneral.Bloqueado)
+            if (userGeneral != null)
             {
-                ViewBag.viewError = true;
-                ViewBag.message = "El usuario se encuentra BLOQUEADO, comuniquese con el administrador del sistema.";
-            }
-            else if (!userGeneral.Activo)
-            {
-                ViewBag.viewError = true;
-                ViewBag.message = "El usuario se encuentra INACTIVO, comuniquese con el administrador del sistema.";
-            }
-            else {
-                var usuario = db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username)
-                                .Where(x => x.Password == login.Password).FirstOrDefault();
-                if (usuario == null)
+                if (userGeneral.Bloqueado)
                 {
-                    //Usuario y/o contraseña incorreta
                     ViewBag.viewError = true;
-                    ViewBag.message = "Revisa tu usuario y contraseña.";
-                    //Aumenta el numero de intentos fallidos si existe
-                    var user = db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username)
-                                .FirstOrDefault();
-                    if (user != null) {
-                        user.IntentosFallidos += 1;
-                        db.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                    }
-
+                    ViewBag.message = "El usuario se encuentra BLOQUEADO, comuniquese con el administrador del sistema.";
+                }
+                else if (!userGeneral.Activo)
+                {
+                    ViewBag.viewError = true;
+                    ViewBag.message = "El usuario se encuentra INACTIVO, comuniquese con el administrador del sistema.";
                 }
                 else
                 {
-
-                    System.Web.HttpContext.Current.Session["User"] = usuario;
-                    var user = db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username)
-                                .FirstOrDefault();
-                    if (user != null)
+                    var usuario = db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username)
+                                    .Where(x => x.Password == login.Password).FirstOrDefault();
+                    if (usuario == null)
                     {
-                        user.IntentosFallidos = 0;
-                        db.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                        if (user.CambiarPassword)
+                        //Usuario y/o contraseña incorreta
+                        ViewBag.viewError = true;
+                        ViewBag.message = "Revisa tu usuario y contraseña.";
+                        //Aumenta el numero de intentos fallidos si existe
+                        var user = db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username)
+                                    .FirstOrDefault();
+                        if (user != null)
                         {
-                            return RedirectToAction("ChangePassword", "Home", login);
+                            user.IntentosFallidos += 1;
+                            if (user.IntentosFallidos == 5)
+                                user.Bloqueado = true;
+                            db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                            db.SaveChanges();
                         }
-                        else
-                        {
-                            return RedirectToAction("Index", "Home", login);
-                        }
-                        
+
                     }
-                    ///validar si debe cambiar contraseña
-                    
-                    
-                    
+                    else
+                    {
+
+                        System.Web.HttpContext.Current.Session["User"] = usuario;
+                        var user = db.Usuarios.Where(x => x.Login == login.Username | x.CorreoElectronico == login.Username)
+                                    .FirstOrDefault();
+                        if (user != null)
+                        {
+                            user.IntentosFallidos = 0;
+                            db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                            db.SaveChanges();
+                            if (user.CambiarPassword)
+                            {
+                                return RedirectToAction("ChangePassword", "Usuario", login);
+                            }
+                            else
+                            {
+                                return RedirectToAction("Index", "Home", login);
+                            }
+
+                        }
+                        ///validar si debe cambiar contraseña
+
+                    }
                 }
             }
-            
+            else
+            {
+                ViewBag.viewError = true;
+                ViewBag.message = "El usuario no existe.";
+            }
                         
 
             return View("Index");

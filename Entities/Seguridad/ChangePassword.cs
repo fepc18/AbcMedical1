@@ -12,12 +12,15 @@ namespace Entities.Seguridad
         public int UsuarioId { get; set; }
         [Required(ErrorMessage = "Campo Requerido")]
         [Display(Name = "Contraseña Antigua")]
+        [DataType(DataType.Password)]
         public string ClaveAntigua { get; set; }
         [Required(ErrorMessage = "Campo Requerido")]
         [Display(Name = "Contraseña Nueva")]
+        [DataType(DataType.Password)]
         public string ClaveNueva { get; set; }
         [Required(ErrorMessage = "Campo Requerido")]
         [Display(Name = "Confirmar Contraseña Nueva")]
+        [DataType(DataType.Password)]
         public string ConfirmarClaveNueva { get; set; }
     }
 }

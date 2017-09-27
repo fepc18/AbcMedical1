@@ -43,18 +43,6 @@ namespace AbcMedical.Controllers
         }
 
 
-        public ActionResult ChangePassword()
-        {
-            
-
-            var  user =(Usuario)System.Web.HttpContext.Current.Session["User"];
-            ViewBag.Username = user.Login;
-            //var user = db.Usuarios.Where(x => x.Login == login.Username).Where(x=>x.CompanyClientId==1).FirstOrDefault();            
-
-            var change = new ChangePassword();
-            change.UsuarioId = user.UsuarioId;
-            
-            return View(change);
-        }
+        
     }
 }
