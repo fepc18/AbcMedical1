@@ -65,6 +65,10 @@
       <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NReco.PdfGenerator, Version=1.1.15.0, Culture=neutral, PublicKeyToken=231663d50a41b451, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.PdfGenerator.1.1.15\lib\net20\NReco.PdfGenerator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -138,15 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\directives\" />
-    <Folder Include="Content\services\" />
-    <Folder Include="Content\Style\" />
     <Folder Include="Content\utilities\" />
     <Folder Include="lib\zip-gulp\js\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbcMedicalContext.cs" />
+    <Compile Include="Action\Historia\RegistroHistoriaAction.cs" />
+    <Compile Include="Action\Administracion\RegistroClinicoAction.cs" />
+    <Compile Include="Action\Administracion\PacienteAction.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -179,6 +183,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Api\RegistroHistoriaController.cs" />
+    <Compile Include="Controllers\Api\RegistroApiController.cs" />
+    <Compile Include="Controllers\Api\PacienteApiController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\DiagnosticoController.cs" />
     <Compile Include="Controllers\EspecialidadController.cs" />
@@ -197,6 +204,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Historia\PDFService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -204,10 +212,30 @@
     <Content Include="Content\app-route.js" />
     <Content Include="Content\app-run.js" />
     <Content Include="Content\app.js" />
+    <Content Include="Content\app\History\NewRegister.js" />
     <Content Include="Content\app\History\History.js" />
+    <Content Include="Content\app\History\Register\CreatePsicologia.js" />
+    <Content Include="Content\app\History\Register\CreateNota.js" />
+    <Content Include="Content\app\History\Register\CreateSeguimientoSaludMental.js" />
+    <Content Include="Content\app\History\Register\CreatePsiquiatria.js" />
+    <Content Include="Content\app\History\Register\CreateTerapiaOcupacional.js" />
+    <Content Include="Content\app\History\Register\CreateTrabajoSocial.js" />
+    <Content Include="Content\app\History\Register\CreateTrabajoSocial.txt" />
+    <Content Include="Content\app\History\Register\ListRegister.js" />
     <Content Include="Content\app_views\History\History.html" />
+    <Content Include="Content\app_views\History\NewRegister.html" />
+    <Content Include="Content\app_views\History\Register\CreatePsicologia.html" />
+    <Content Include="Content\app_views\History\Register\CreateNota.html" />
+    <Content Include="Content\app_views\History\Register\CreateSeguimientoSaludMental.html" />
+    <Content Include="Content\app_views\History\Register\CreatePsiquiatria.html" />
+    <Content Include="Content\app_views\History\Register\CreateTerapiaOcupacional.html" />
+    <Content Include="Content\app_views\History\Register\CreateTrabajoSocial.html" />
+    <Content Include="Content\app_views\History\Register\ListRegister.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\directives\controls\dir-messages.js" />
+    <Content Include="Content\factories\Administration\fac-administration.js" />
+    <Content Include="Content\factories\History\fac-history.js" />
     <Content Include="Content\factories\tools\fac-console.js" />
     <Content Include="Content\factories\tools\fac-memory.js" />
     <Content Include="Content\factories\tools\fac-navigation.js" />
@@ -216,7 +244,29 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\logo-app.png" />
     <Content Include="Content\Images\logo-companies\1.png" />
+    <Content Include="Content\Images\logo-reportes\derecha.png" />
+    <Content Include="Content\Images\logo-reportes\izquierda.png" />
     <Content Include="Content\Login.css" />
+    <Content Include="Content\services\serv-history.js" />
+    <Content Include="Content\services\serv-administration.js" />
+    <Content Include="Content\Style\templates\404.html" />
+    <Content Include="Content\Style\templates\500.html" />
+    <Content Include="Content\Style\templates\big-message-error.html" />
+    <Content Include="Content\Style\templates\big-message-info.html" />
+    <Content Include="Content\Style\templates\big-message-success.html" />
+    <Content Include="Content\Style\templates\big-message-warning.html" />
+    <Content Include="Content\Style\templates\google-test.html" />
+    <Content Include="Content\Style\templates\loading.html" />
+    <Content Include="Content\Style\templates\message-error.html" />
+    <Content Include="Content\Style\templates\message-info.html" />
+    <Content Include="Content\Style\templates\message-loading-data.html" />
+    <Content Include="Content\Style\templates\message-success.html" />
+    <Content Include="Content\Style\templates\message-valid-form.html" />
+    <Content Include="Content\Style\templates\message-warning.html" />
+    <Content Include="Content\Style\templates\min-message-error.html" />
+    <Content Include="Content\Style\templates\min-message-info.html" />
+    <Content Include="Content\Style\templates\min-message-success.html" />
+    <Content Include="Content\Style\templates\min-message-warning.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2420,8 +2470,13 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\ReasignarClave.cshtml" />
     <Content Include="Views\Home\ChangePassword.cshtml" />
+    <Content Include="Views\Nota.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{6be72f83-931d-4c10-be5d-343eb9371224}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{6d3b0655-3d25-4a1c-a28c-58aee5af1540}</Project>
       <Name>Entities</Name>

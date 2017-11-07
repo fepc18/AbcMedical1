@@ -1,0 +1,17 @@
+﻿<div class="alert alert-warning alert-block fade in" style="margin-top:20px;">
+    <button ng-if="data.close" data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    <h4>
+        <i class="fa fa-exclamation-triangle"></i>
+        <span ng-bind-html="data.title || 'Advertencia!'">
+        </span>        
+    </h4>
+    <p ng-bind-html="data.message || 'El proceso ha generado una advertencia.'"></p>
+    <div ng-if="data.isFn">
+        <button class="btn btn-sm btn-message-dialog" style="border-color:#8a6d3b; color:#8a6d3b"
+                ng-click="funct()">
+            {{data.messageButton || 'Continuar'}}
+        </button>
+    </div>
+</div>

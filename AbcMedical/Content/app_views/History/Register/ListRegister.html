@@ -1,0 +1,47 @@
+﻿<div class="col-md-12 form">
+    <div class="content">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <i class="fa fa-folder-open-o"></i>   Histórico de Registros
+            </header>
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class="timeline" ng-repeat="item in ListRegister.ListHistorialRegistros">
+                        <article class="timeline-item" ng-if="item.NumeroFila == 1">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon purple"></span>
+                                        <span class="timeline-date">{{item.Hora}}</span>
+                                        <h1 class="purple">{{item.Fecha}} | {{item.Profesional}}</h1>
+                                        <p>{{item.Asunto}}</p>
+                                        <button type="button" class="btn btn-link btn-xs" ng-click="ListRegister.generatePDF(item.RegistroHistoriaId)"><i class="fa fa-file-pdf-o"></i>PDF</button>
+                                        <button type="button" class="btn btn-link btn-xs" ng-click="ListRegister.generateEmail(item.RegistroHistoriaId)"><i class="fa fa-envelope"></i>E-Mail</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt" ng-if="item.NumeroFila == 2">
+                            <div class="timeline-desk alt">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon green"></span>
+                                        <span class="timeline-date">{{item.Hora}}</span>
+                                        <h1 class="green">{{item.Fecha}} | {{item.Profesional}}</h1>
+                                        <p>{{item.Asunto}}</p>
+                                        <button type="button" class="btn btn-link btn-xs" ng-click="ListRegister.generatePDF(item.RegistroHistoriaId)"><i class="fa fa-file-pdf-o"></i>PDF</button>
+                                        <button type="button" class="btn btn-link btn-xs" ng-click="consult.generateProductNaturalPerson(item.admision)"><i class="fa fa-envelope"></i>E-Mail</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

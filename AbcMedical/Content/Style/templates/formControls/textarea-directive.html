@@ -1,0 +1,17 @@
+﻿<div class="col-sm-12 col-xs-12 padding-left-right-5px">
+    <div class="form-group form-group-sm">
+        <label for="area{{item.idQuestion}}" class="overflow-ellipsis">{{item.idQuestion}} - {{item.nameQuestion}}</label>
+        <textarea id="area{{item.idQuestion}}"
+                  name="area{{item.idQuestion}}"
+                  class="form-control"
+                  rows="{{rows}}"
+                  ng-model="model"
+                  maxlength="1000"
+                  required></textarea>
+        <!--<div class="message-valid">
+            <p ng-if="!model">
+                {{regex.required.description}}
+            </p>
+        </div>-->
+    </div>
+</div>

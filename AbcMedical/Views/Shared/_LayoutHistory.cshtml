@@ -23,182 +23,192 @@
     <script src="~/Content/app-run.js"></script>    
     <script src="~/Content/app-route.js"></script>
     <script src="~/Content/app-interceptor.js"></script>
-    <script src="~/Content/app/History/History.js"></script>
+    
     
 
     <script src="~/Content/factories/tools/fac-memory.js"></script>
     <script src="~/Content/factories/tools/fac-navigation.js"></script>
     <script src="~/Content/factories/tools/fac-regex.js"></script>
     
+    
+    <script src="~/Content/services/serv-administration.js"></script>
+    <script src="~/Content/services/serv-history.js"></script>
 
+    <script src="~/Content/factories/Administration/fac-administration.js"></script>
+    <script src="~/Content/factories/History/fac-history.js"></script>
+
+    <script src="~/Content/app/History/History.js"></script>
+    <script src="~/Content/app/History/NewRegister.js"></script>
+
+    <script src="~/Content/app/History/Register/CreatePsicologia.js"></script>
+    <script src="~/Content/app/History/Register/CreateNota.js"></script>
+    <script src="~/Content/app/History/Register/CreateTerapiaOcupacional.js"></script>
+    <script src="~/Content/app/History/Register/CreatePsiquiatria.js"></script>
+    <script src="~/Content/app/History/Register/CreateTrabajoSocial.js"></script>
+    <script src="~/Content/app/History/Register/CreateSeguimientoSaludMental.js"></script>
+    <script src="~/Content/app/History/Register/ListRegister.js"></script>
+
+    
+    <script src="~/Content/directives/controls/dir-messages.js"></script>
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header class="header white-bg">
-        <div class="sidebar-toggle-box">
-            <i class="fa fa-bars"></i>
-        </div>
-        <!--logo start-->
-        <a href="index.html" class="logo">
-            <!--   <img src="~/Content/Images/logo-app.png" />ABC<span>Medical</span>-->
-        </a>
-        <div class="nav notify-row">
-            <button type="submit" class="btn btn-info">Nuevo Registro</button>
-        </div>
-        <!--logo end-->
-        <div class="top-nav ">
-            <!--search & user info start-->
-            <ul class="nav pull-right top-menu">
-                
-                <!-- user login dropdown start-->
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <!-- <img alt="" src="img/avatar1_small.jpg">-->
-                        <span class="username">Jhon Doue</span>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu extended logout">
-                        <div class="log-arrow-up"></div>
-                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                        <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
-                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+    <div  ng-controller="HistoryController as History">
+        <form role="form" name="formBuscarPaciente">
+            <header class="header white-bg">
+                <div class="sidebar-toggle-box">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!--logo start-->
+                <a href="index.html" class="logo">
+                    <!--   <img src="~/Content/Images/logo-app.png" />ABC<span>Medical</span>-->
+                </a>
+                <div class="nav notify-row">
+                    <button class="btn btn-info" ng-click="History.newRegister()" ng-disabled="History.pacienteId==0">Nuevo Registro</button>
+                </div>
+                <!--logo end-->
+                <div class="top-nav ">
+                    <!--search & user info start-->
+                    <ul class="nav pull-right top-menu">
+
+                        <!-- user login dropdown start-->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <!-- <img alt="" src="img/avatar1_small.jpg">-->
+                                <span class="username">Jhon Doue</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <div class="log-arrow-up"></div>
+                                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+                        <li class="sb-toggle-right">
+                            <i class="fa  fa-align-right"></i>
+                        </li>
+                        <!-- user login dropdown end -->
                     </ul>
-                </li>
-                <li class="sb-toggle-right">
-                    <i class="fa  fa-align-right"></i>
-                </li>
-                <!-- user login dropdown end -->
-            </ul>
-            <!--search & user info end-->
-        </div>
-    </header>
-   
-        <section id="container">
-            <section class="wrapper">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12">
-                                <section class="panel panel-primary">
-                                    <header class="panel-heading">
-                                        <i class="fa fa-folder-open-o"></i>   Abrir Historia
-                                    </header>
-                                    <div class="panel-body">
-                                        <form role="form">
+                    <!--search & user info end-->
+                </div>
+            </header>
+
+            <section id="container">
+                <section class="wrapper">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <section class="panel panel-primary">
+                                        <header class="panel-heading">
+                                            <i class="fa fa-folder-open-o"></i>   Abrir Historia
+                                        </header>
+                                        <div class="panel-body">
+
                                             <div class="col-md-9">
                                                 <div class="form-group">
-
                                                     <label for="exampleInputEmail1">Identificación</label>
-                                                    <input class="form-control" id="InputIdentificacion" placeholder="Ingrese Identificación">
+                                                    <input class="form-control" id="InputIdentificacion" placeholder="Ingrese Identificación" ng-model="History.documentFind">
                                                 </div>
-
                                             </div>
                                             <div class="col-md-3">
-                                                <button type="submit" class="btn btn-info">Buscar</button>
-                                            </div>
-                                            
-                                        </form>
-
-                                    </div>
-                                </section>
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                            <div class="col-lg-12  col-md-12 ">
-                                <section class="panel panel-primary">
-                                    <header class="panel-heading">
-                                        <i class="fa fa-user"></i>    Datos del Paciente
-                                    </header>
-                                    <div class="panel-body">
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <label for="exampleInputEmail1"><b>Felipe Esteban Pabón Cortes</b></label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="exampleInputEmail1">Identificación:</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="exampleInputEmail1"><b>1.085.263.418</b></label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="exampleInputEmail1">Género:</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="exampleInputEmail1"><b>Másculino</b></label>
-                                                </div>
-
-                                                <button type="submit" class="btn btn-info">Actualizar Datos</button>
-
+                                                <button  class="btn btn-info" ng-click="History.consultPaciente()">Buscar</button>
                                             </div>
 
-                                        </form>
 
-                                    </div>
-                                </section>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12">
-                                <section class="panel panel-primary">
-                                    <header class="panel-heading">
-                                        <i class="fa fa-clock-o"></i> Historia Clínico
-                                    </header>
-                                    <div class="panel-body">
-                                        <div class="table-responsive" >
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        
-                                                        <th>Table heading</th>
-                                                        <th>Table heading</th>
-                                                        <th>Table heading</th>
-                                                        
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Table cell</td>
-                                                        <td>Table cell</td>
-                                                        <td>></td>                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Table cell</td>
-                                                        <td>Table cell</td>
-                                                        <td>></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Table cell</td>
-                                                        <td>Table cell</td>
-                                                        <td>></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
                                         </div>
-                                    </div>
-                                </section>
+                                    </section> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12  col-md-12 ">
+                                    <section class="panel panel-primary">
+                                        <header class="panel-heading">
+                                            <i class="fa fa-user"></i>    Datos del Paciente
+                                        </header>
+                                        <div class="panel-body">
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <label for="exampleInputEmail1"><b>{{History.nombreCompleto}}</b></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1">Identificación:</label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1"><b>{{History.identificacion}}</b></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1">Género:</label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1"><b>{{History.genero}}</b></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1">Edad:</label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1"><b>{{History.edad}}</b></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1">Teléfonos:</label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1"><b>{{History.telefonos}}</b></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-3">
+                                                        <label for="exampleInputEmail1">Dirección:</label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-9">
+                                                        <label for="exampleInputEmail1"><b>{{History.direccion}}</b></label>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <button type="submit" class="btn btn-info">Actualizar Datos</button>
+                                                    </div>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <section class="panel panel-primary">
+                                        <header class="panel-heading">
+                                            <i class="fa fa-clock-o"></i> Historia Clínico
+                                        </header>
+                                        <div class="panel-body">
+
+                                            <ul class="inbox-nav inbox-divider">
+                                                
+                                                <li ng-repeat="item in History.ListHistorialRegistros">
+                                                    <a ng-click="History.ListRegister(item.RegistroClinicoId)"> <i class="fa fa-file-o"></i> {{item.RegistroClinico}} <span class="label label-info pull-right r-activity">{{item.Cantidad}}</span></a>
+                                                </li>
+                                                
+                                            </ul>
+
+
+                                        </div>
+                                    </section>
+                                </div>
                             </div>
 
                         </div>
-                      
-                    </div>
-
-                    <div class="col-md-9">
-                        <div class="row">
-                            @RenderBody()
+                        <div class="col-md-9">
+                            <div class="row">
+                                @RenderBody()
+                            </div>
                         </div>
-                </div>
+                        </div>
+                </section>
             </section>
-            </section>
-
-
- 
+        </form>
+    </div>
+     
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

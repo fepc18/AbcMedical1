@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Administracion
 {
+    [Table("Departamento")]
     public class Departamento
     {
         [Required(ErrorMessage = "Campo Requerido")]

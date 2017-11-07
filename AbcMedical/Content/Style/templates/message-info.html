@@ -1,0 +1,17 @@
+﻿<div class="alert alert-info alert-block fade in" style="margin-top:20px;">
+    <button ng-if="data.close" data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    <h4>
+        <i class="fa fa-info-circle"></i>
+        <span>{{data.title}}
+        </span>
+    </h4>
+    <p>{{data.message}}</p>
+    <div ng-if="data.isFn">
+        <button class="btn btn-sm btn-message-dialog" style="border-color:#31708f; color:#31708f"
+                ng-click="funct()">
+            {{data.messageButton}}
+        </button>
+    </div>
+</div>

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Entities.Administracion;
 
+
 namespace AbcMedical.Controllers
 {
     public class PacienteController : Controller
@@ -168,5 +169,9 @@ namespace AbcMedical.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+       
+
     }
 }

@@ -1,0 +1,16 @@
+﻿<div class="animate-if form-group form-group-sm padding-left-right-5px">
+    <div class="col-sm-12 col-xs-12 no-padding">
+        <label class="overflow-ellipsis"><strong>{{item.idQuestion}} - {{item.nameQuestion}}</strong></label>
+    </div>
+    <div class="col-sm-12 no-padding check-directive">
+        <!--<div class="col-sm-12 col-xs-12 no-padding check-directive">-->
+        <div class="custom-check" style="padding-left:0" ng-repeat="answer in item.possibleAnswers"  ng-class="checkSize">
+            <input type="checkbox"
+                   data-checklist-model="selectedChecks"
+                   data-checklist-value="answer.consecutive"
+                   id="{{item.idQuestion}}_{{answer.consecutive}}"
+                   ng-change="change(answer)">
+            <label for="{{item.idQuestion}}_{{answer.consecutive}}" class="overflow-ellipsis">{{answer.description}}</label>
+        </div>
+    </div>
+</div>

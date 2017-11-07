@@ -1,0 +1,17 @@
+﻿<div class="alert alert-danger alert-block fade in" style="margin-top:20px;">
+    <button ng-if="data.close" data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    <h4>
+        <i class="fa fa-times-circle"></i>
+        <span ng-bind-html="data.title || 'Lo Sentimos'">
+        </span>
+    </h4>
+    <p ng-bind-html="data.message || 'El proceso ha generado errores.'"></p>
+    <div ng-if="data.isFn">
+        <button class="btn btn-sm btn-message-dialog" style="border-color:#a94442; color:#a94442"
+                ng-click="funct()">
+            {{data.messageButton || 'Aceptar'}}
+        </button>
+    </div>
+</div>

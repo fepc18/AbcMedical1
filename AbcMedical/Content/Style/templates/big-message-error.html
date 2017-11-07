@@ -1,0 +1,47 @@
+﻿
+<div class="modal fade big-message-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button ng-if="data.closing" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p class="modal-title size-16px" ng-bind-html="data.title || 'Lo Sentimos'"></p>
+            </div>
+            <div class="modal-body">
+                <div class="big-message-v2">
+                    <div class="row">
+                        <div class="icon col-md-12">
+                            <i class="fa fa-times-circle color-error-v2"></i>
+                        </div>
+                        <div class="content col-md-12">
+                            <p class="error" ng-bind-html="data.message || 'El proceso ha generado errores.'"></p>
+                        </div>
+                        <div class="text-center col-md-12 button">
+                            <button ng-if="data.isFn" ng-click="funct()" type="button" data-dismiss="modal" aria-label="Close" class="button bg-color-error-v2">
+                                {{data.messageButton || 'Aceptar'}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="big-message-v2">
+    <div class="row">
+        <div class="icon col-md-12">
+            <i class="fa fa-times-circle color-error-v2"></i>
+        </div>
+        <div class="content col-md-12">
+            <p class="title" ng-bind-html="data.title || 'Lo Sentimos'"></p>
+            <p class="error" ng-bind-html="data.message || 'El proceso ha generado errores.'"></p>
+        </div>
+        <div class="text-center col-md-12 button">
+            <button ng-if="data.isFn" ng-click="funct()" class="button bg-color-error-v2">
+                {{data.messageButton || 'Aceptar'}}
+            </button>
+        </div>       
+    </div>
+</div>

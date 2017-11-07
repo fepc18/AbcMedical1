@@ -1,0 +1,422 @@
+﻿<div class="col-md-12 form">
+    <div class="content">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <i class="fa fa-folder-open-o"></i>   Nuevo Registro
+            </header>
+            <div class="panel panel-body">
+                <div class="form-horizontal">
+                    <h4>Terapia Ocupacional</h4>
+                    <hr />
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Fecha</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="Fecha" placeholder="" disabled="disabled" ng-model="TerapiaOcupacional.Registro.Fecha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Hora</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="Hora" placeholder="" disabled="disabled" ng-model="TerapiaOcupacional.Registro.Hora">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Calidad de la información</label>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" id="CalidadInformacion" name="CalidadInformacion" placeholder="" ng-model="TerapiaOcupacional.Registro.CalidadInformacion" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Hijos</label>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" id="Hijos" name="Hijos" placeholder="" ng-model="TerapiaOcupacional.Registro.Hijos" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Motivo de Consulta</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="MotivoConsulta" placeholder="" ng-model="TerapiaOcupacional.Registro.MotivoConsulta"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Entornos de Riesgo</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="EntornosRiesgo" placeholder="" ng-model="TerapiaOcupacional.Registro.EntornosRiesgo"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Personalidad Previa</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="PersonalidadPrevia" placeholder="" ng-model="TerapiaOcupacional.Registro.PersonalidadPrevia"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <header class="panel-heading" data-toggle="collapse" data-target="#antecedentes">
+                            Antecedentes
+                        </header>
+                        <div class="panel-body collapse in" id="antecedentes">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Patológicos</label>
+                                        </div><div class="col-md-12"><textarea class="form-control" id="PatologicosAntecedentes" placeholder="" ng-model="TerapiaOcupacional.Registro.PatologicosAntecedentes"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Farmacológicos</label>
+                                        </div><div class="col-md-12"><textarea class="form-control" id="FarmacologicosAntecedentes" placeholder="" ng-model="TerapiaOcupacional.Registro.FarmacologicosAntecedentes"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Quirúrgicos</label>
+                                        </div><div class="col-md-12"><textarea class="form-control" id="QuirurgicosAntecedentes" placeholder="" ng-model="TerapiaOcupacional.Registro.QuirurgicosAntecedentes"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Traumáticos</label>
+                                        </div><div class="col-md-12"><textarea class="form-control" id="TraumaticosAntecedentes" placeholder="" ng-model="TerapiaOcupacional.Registro.TraumaticosAntecedentes"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Alérgicos</label>
+                                        </div><div class="col-md-12"><textarea class="form-control" id="AlergicosAntecedentes" placeholder="" ng-model="TerapiaOcupacional.Registro.AlergicosAntecedentes"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Familiares</label>
+                                        </div><div class="col-md-12"><textarea class="form-control" id="FamiliaresAntecedentes" placeholder="" ng-model="TerapiaOcupacional.Registro.FamiliaresAntecedentes"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <header class="panel-heading" data-toggle="collapse" data-target="#componentesejecucion">
+                            Componentes de Ejecución
+                        </header>
+                        <div class="panel-body collapse in" id="componentesejecucion">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Control Motor</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Movimientos Voluntarios (Corticales)</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="MovimientosVoluntarios" name="MovimientosVoluntarios" placeholder="" ng-model="TerapiaOcupacional.Registro.MovimientosVoluntarios" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Movimientos Automáticos (Subcorticales) </label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="MovimientosAutomaticos" name="MovimientosAutomaticos" placeholder="" ng-model="TerapiaOcupacional.Registro.MovimientosAutomaticos" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Movimientos Reflejos (Medular)</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="MovimientosReflejos" name="MovimientosReflejos" placeholder="" ng-model="TerapiaOcupacional.Registro.MovimientosReflejos" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Equilibrio</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Dinámico</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="Dinamico" name="Dinamico" placeholder="" ng-model="TerapiaOcupacional.Registro.Dinamico" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Estático</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="Estatico" name="Estatico" placeholder="" ng-model="TerapiaOcupacional.Registro.Estatico" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Coordinación Motor Gruesa</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Control de Cabeza</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ControlCabeza" name="ControlCabeza" placeholder="" ng-model="TerapiaOcupacional.Registro.ControlCabeza" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Control de Tronco</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ControlTronco" name="ControlTronco" placeholder="" ng-model="TerapiaOcupacional.Registro.ControlTronco" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Control de M.M.I.I.</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ControlMMII" name="ControlMMII" placeholder="" ng-model="TerapiaOcupacional.Registro.ControlMMII" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Control de M.M.S.S.</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ControldeMMSS" name="ControldeMMSS" placeholder="" ng-model="TerapiaOcupacional.Registro.ControldeMMSS" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Coordinación Motor Fina</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Precisión</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Precision" name="Precision" placeholder="" ng-model="TerapiaOcupacional.Registro.Precision" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Control de la Fuerza</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ControlFuerza" name="ControlFuerza" placeholder="" ng-model="TerapiaOcupacional.Registro.ControlFuerza" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Manejo Espacial</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ManejoEspacial" name="ManejoEspacial" placeholder="" ng-model="TerapiaOcupacional.Registro.ManejoEspacial" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Patrones Funcionales</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Mano - Cabeza</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ManoCabeza" name="ManoCabeza" placeholder="" ng-model="TerapiaOcupacional.Registro.ManoCabeza" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Mano - Boca</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ManoBoca" name="ManoBoca" placeholder="" ng-model="TerapiaOcupacional.Registro.ManoBoca" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Mano - Rodilla</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ManoRodilla" name="ManoRodilla" placeholder="" ng-model="TerapiaOcupacional.Registro.ManoRodilla" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Mano - Pie</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ManoPie" name="ManoPie" placeholder="" ng-model="TerapiaOcupacional.Registro.ManoPie" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Patrones Globales</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Marcha</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Marcha" name="Marcha" placeholder="" ng-model="TerapiaOcupacional.Registro.Marcha" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Correr</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Correr" name="Correr" placeholder="" ng-model="TerapiaOcupacional.Registro.Correr" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Saltar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Saltar" name="Saltar" placeholder="" ng-model="TerapiaOcupacional.Registro.Saltar" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Patear</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Patear" name="Patear" placeholder="" ng-model="TerapiaOcupacional.Registro.Patear" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Empujar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Empujar" name="Empujar" placeholder="" ng-model="TerapiaOcupacional.Registro.Empujar" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Halar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Halar" name="Halar" placeholder="" ng-model="TerapiaOcupacional.Registro.Halar" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Sujetar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Sujetar" name="Sujetar" placeholder="" ng-model="TerapiaOcupacional.Registro.Sujetar" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Lanzar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Lanzar" name="Lanzar" placeholder="" ng-model="TerapiaOcupacional.Registro.Lanzar" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Patrones Integrales</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Prensión Digital</label> </div><div class="col-md-12"><input class="form-control" type="text" id="PrensionDigital" name="PrensionDigital" placeholder="" ng-model="TerapiaOcupacional.Registro.PrensionDigital" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Prensión Palmar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="PrensionPalmar" name="PrensionPalmar" placeholder="" ng-model="TerapiaOcupacional.Registro.PrensionPalmar" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Componente Sensorial</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Táctil</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Tactil" name="Tactil" placeholder="" ng-model="TerapiaOcupacional.Registro.Tactil" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Propioceptivo</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Propioceptivo" name="Propioceptivo" placeholder="" ng-model="TerapiaOcupacional.Registro.Propioceptivo" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Auditivo</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Auditivo" name="Auditivo" placeholder="" ng-model="TerapiaOcupacional.Registro.Auditivo" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Vestibular</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Vestibular" name="Vestibular" placeholder="" ng-model="TerapiaOcupacional.Registro.Vestibular" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Gustativo</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Gustativo" name="Gustativo" placeholder="" ng-model="TerapiaOcupacional.Registro.Gustativo" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Olfatorio</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Olfatorio" name="Olfatorio" placeholder="" ng-model="TerapiaOcupacional.Registro.Olfatorio" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Visual</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Visual" name="Visual" placeholder="" ng-model="TerapiaOcupacional.Registro.Visual" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Componente Cognitivo</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Atención</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Atencion" name="Atencion" placeholder="" ng-model="TerapiaOcupacional.Registro.Atencion" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Memoria</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Memoria" name="Memoria" placeholder="" ng-model="TerapiaOcupacional.Registro.Memoria" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Orientación</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Orientacion" name="Orientacion" placeholder="" ng-model="TerapiaOcupacional.Registro.Orientacion" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Seguimiento de instrucciones</label> </div><div class="col-md-12"><input class="form-control" type="text" id="SeguimientoInstrucciones" name="SeguimientoInstrucciones" placeholder="" ng-model="TerapiaOcupacional.Registro.SeguimientoInstrucciones" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Inicia, desarrolla y culmina una actividad</label> </div><div class="col-md-12"><input class="form-control" type="text" id="IniciaDesarrollaCulmina" name="IniciaDesarrollaCulmina" placeholder="" ng-model="TerapiaOcupacional.Registro.IniciaDesarrollaCulmina" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Resolución de problemas</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ResolucionProblemas" name="ResolucionProblemas" placeholder="" ng-model="TerapiaOcupacional.Registro.ResolucionProblemas" /></div></div></div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Componente Psicosocial</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Contacto visual</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ContactoVisual" name="ContactoVisual" placeholder="" ng-model="TerapiaOcupacional.Registro.ContactoVisual" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Forma de comunicacion</label> </div><div class="col-md-12"><input class="form-control" type="text" id="FormaComunicacion" name="FormaComunicacion" placeholder="" ng-model="TerapiaOcupacional.Registro.FormaComunicacion" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Autocontrol</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Autocontrol" name="Autocontrol" placeholder="" ng-model="TerapiaOcupacional.Registro.Autocontrol" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Manejo de límites y normas</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ManejoLimites" name="ManejoLimites" placeholder="" ng-model="TerapiaOcupacional.Registro.ManejoLimites" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Adaptación a contextos nuevos</label> </div><div class="col-md-12"><input class="form-control" type="text" id="AdaptacionContextosNuevos" name="AdaptacionContextosNuevos" placeholder="" ng-model="TerapiaOcupacional.Registro.AdaptacionContextosNuevos" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Valores e intereses</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ValoresIntereses" name="ValoresIntereses" placeholder="" ng-model="TerapiaOcupacional.Registro.ValoresIntereses" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>AutoConcepto</label> </div><div class="col-md-12"><input class="form-control" type="text" id="AutoConcepto" name="AutoConcepto" placeholder="" ng-model="TerapiaOcupacional.Registro.AutoConcepto" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Conducta social</label> </div><div class="col-md-12"><input class="form-control" type="text" id="ConductaSocial" name="ConductaSocial" placeholder="" ng-model="TerapiaOcupacional.Registro.ConductaSocial" /></div></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <header class="panel-heading" data-toggle="collapse" data-target="#areasejecucion">
+                            Áreas de Ejecución
+                        </header>
+                        <div class="panel-body collapse in" id="areasejecucion">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Actividades de la vida diaria básicas</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Orinar y defecar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="OrinarDefecar" name="OrinarDefecar" placeholder="" ng-model="TerapiaOcupacional.Registro.OrinarDefecar" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Vestido</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Vestido" name="Vestido" placeholder="" ng-model="TerapiaOcupacional.Registro.Vestido" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Alimentación</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Alimentacion" name="Alimentacion" placeholder="" ng-model="TerapiaOcupacional.Registro.Alimentacion" /></div></div></div>
+                                <div class="col-md-3 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Mantenimiento de la salud</label> </div><div class="col-md-12"><input class="form-control" type="text" id="MantenimientoSalud" name="MantenimientoSalud" placeholder="" ng-model="TerapiaOcupacional.Registro.MantenimientoSalud" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Cuidado de enseres personales</label> </div><div class="col-md-12"><input class="form-control" type="text" id="CuidadoEnseresPersonales" name="CuidadoEnseresPersonales" placeholder="" ng-model="TerapiaOcupacional.Registro.CuidadoEnseresPersonales" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Rutina medicamentosa</label> </div><div class="col-md-12"><input class="form-control" type="text" id="RutinaMedicamentosa" name="RutinaMedicamentosa" placeholder="" ng-model="TerapiaOcupacional.Registro.RutinaMedicamentosa" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Movilidad Funcional</label> </div><div class="col-md-12"><input class="form-control" type="text" id="MovilidadFuncional" name="MovilidadFuncional" placeholder="" ng-model="TerapiaOcupacional.Registro.MovilidadFuncional" /></div></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Actividades de la vida instrumentales</b></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Escolaridad (Último año cursado)</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Escolaridad" name="Escolaridad" placeholder="" ng-model="TerapiaOcupacional.Registro.Escolaridad" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Empleo</label> </div><div class="col-md-12"><input class="form-control" type="text" id="Empleo" name="Empleo" placeholder="" ng-model="TerapiaOcupacional.Registro.Empleo" /></div></div></div>
+                                <div class="col-md-4 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Trabajo voluntario</label> </div><div class="col-md-12"><input class="form-control" type="text" id="TrabajoVoluntario" name="TrabajoVoluntario" placeholder="" ng-model="TerapiaOcupacional.Registro.TrabajoVoluntario" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Organización del hogar</label> </div><div class="col-md-12"><input class="form-control" type="text" id="OrganizaciónHogar" name="OrganizaciónHogar" placeholder="" ng-model="TerapiaOcupacional.Registro.OrganizaciónHogar" /></div></div></div>
+                                <div class="col-md-6 col-xs-12"><div class="form-group"> <div class="col-md-12"> <label>Cuidado de otros</label> </div><div class="col-md-12"><input class="form-control" type="text" id="CuidadoOtros" name="CuidadoOtros" placeholder="" ng-model="TerapiaOcupacional.Registro.CuidadoOtros" /></div></div></div>
+
+                            </div>
+                            </div>
+                        </div>
+                            <div class="panel panel-default">
+                                <header class="panel-heading" data-toggle="collapse" data-target="#plantratamiento">
+                                    Plan de Tratamiento
+                                </header>
+                                <div class="panel-body collapse in" id="plantratamiento">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Meta</label>
+                                                </div><div class="col-md-12"><textarea class="form-control" id="Meta" placeholder="" ng-model="TerapiaOcupacional.Registro.Meta"></textarea></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>ObjetivoGeneral</label>
+                                                </div><div class="col-md-12"><textarea class="form-control" id="ObjetivoGeneral" placeholder="" ng-model="TerapiaOcupacional.Registro.ObjetivoGeneral"></textarea></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>ObjetivosEspecificos</label>
+                                                </div><div class="col-md-12"><textarea class="form-control" id="ObjetivosEspecificos" placeholder="" ng-model="TerapiaOcupacional.Registro.ObjetivosEspecificos"></textarea></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-12 col-md-12">
+                                            <input type="button" value="Guardar" ng-click="TerapiaOcupacional.save()" class="btn btn-success" />
+                                        </div>
+                                    </div>
+                                    <message-custom type="info" title="Operación Finalizada" ng-if="TerapiaOcupacional.savedOK" funct="TerapiaOcupacional.LoadHistory()" messageButton="Aceptar"
+                                                    message="Registro guardado exitosamente!">
+                                    </message-custom>
+                                    <message-custom type="info" big ng-if="TerapiaOcupacional.savedFail"
+                                                    message="{{TerapiaOcupacional.messageFail}}">
+                                    </message-custom>
+                                </div>
+                            </div>
+</section>
+        </div>
+   </div>

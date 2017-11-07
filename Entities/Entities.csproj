@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion\Api\InGetRegistrosHistorial.cs" />
+    <Compile Include="Administracion\Api\OutGetRegistrosHistorial.cs" />
+    <Compile Include="Administracion\Api\OutGetRegistros.cs" />
+    <Compile Include="Administracion\Api\InGetRegistros.cs" />
+    <Compile Include="Administracion\Api\PacienteResponse.cs" />
     <Compile Include="Administracion\Ciudad.cs" />
     <Compile Include="Administracion\CompanyClient.cs" />
     <Compile Include="Administracion\Departamento.cs" />
     <Compile Include="Administracion\Diagnostico.cs" />
     <Compile Include="Administracion\Etnia.cs" />
+    <Compile Include="Administracion\RegistroClinico.cs" />
     <Compile Include="Administracion\TipoSangre.cs" />
     <Compile Include="Administracion\TipoUsuario.cs" />
     <Compile Include="Administracion\Escolaridad.cs" />
@@ -57,13 +63,26 @@
     <Compile Include="Administracion\Profesional.cs" />
     <Compile Include="Administracion\PuestoAtencion.cs" />
     <Compile Include="Administracion\TipoIdentificacion.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Historia\Api\InGetRegistrosHistorial.cs" />
+    <Compile Include="Historia\Api\OutGetResumenRegistrosHistorial.cs" />
+    <Compile Include="Historia\Api\OutGetRegistrosHistorial.cs" />
+    <Compile Include="Historia\Api\Register\Psicologia.cs" />
+    <Compile Include="Historia\Api\Register\Nota.cs" />
+    <Compile Include="Historia\Api\Register\Psiquiatria.cs" />
+    <Compile Include="Historia\Api\Register\SeguimientoSaludMental.cs" />
+    <Compile Include="Historia\Api\Register\TerapiaOcupacional.cs" />
+    <Compile Include="Historia\Api\Register\TrabajoSocial.cs" />
+    <Compile Include="Historia\Api\ResumenRegistroHistorial.cs" />
+    <Compile Include="Historia\Api\RegistroHistorial.cs" />
+    <Compile Include="Historia\RegistroHistoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\ChangePassword.cs" />
     <Compile Include="Seguridad\Login.cs" />
     <Compile Include="Seguridad\Perfil.cs" />
     <Compile Include="Seguridad\Usuario.cs" />
+    <Compile Include="Utilities\Response.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

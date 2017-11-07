@@ -1,0 +1,72 @@
+﻿<div class="col-md-12 form">
+    <div class="content">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <i class="fa fa-folder-open-o"></i>   Nuevo Registro
+            </header>
+            <div class="panel panel-body">
+                <div class="form-horizontal">
+                    <h4>Nota</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Asunto</label>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" id="Asunto" name="Asunto" placeholder="" ng-model="Nota.Registro.Asunto" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Fecha</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="Fecha" placeholder="" disabled="disabled" ng-model="Nota.Registro.Fecha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Hora</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="Hora" placeholder="" disabled="disabled" ng-model="Nota.Registro.Hora">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Descripción</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="Descripcion" placeholder="" ng-model="Nota.Registro.Descripcion"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-12 col-md-12">
+                            <input type="button" value="Guardar" ng-click="Nota.save()" class="btn btn-success" />
+                        </div>
+                    </div>
+                    <message-custom type="info" title="Operación Finalizada" ng-if="Nota.savedOK" funct="Nota.LoadHistory()" messageButton="Aceptar"
+                                    message="Registro guardado exitosamente!">
+                    </message-custom>
+                    <message-custom type="info" big ng-if="Nota.savedFail"
+                                    message="{{Nota.messageFail}}">
+                    </message-custom>
+                 </div>
+            </div>
+                </section>
+        </div>
+   </div>

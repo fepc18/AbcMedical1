@@ -1,0 +1,38 @@
+﻿<div class="col-sm-12 col-xs-12 padding-left-right-5px">
+    <div class="form-group form-group-sm">
+        <label for="select{{item.idQuestion}}" class="overflow-ellipsis">{{item.idQuestion}} - {{item.nameQuestion}}</label>
+        <select class="form-control"
+                name="select{{item.idQuestion}}"
+                id="select{{item.idQuestion}}"
+                ng-model="model"
+                ng-change="change(model)"
+                ng-options="option.description for option in item.possibleAnswers">
+            <option value="" selected>Seleccione una Opci&oacute;n</option>
+        </select>
+        <div class="message-valid">
+            <!--<p ng-if="form.select{{item.idQuestion}}.$error.required">
+                {{regex.required.description}}
+            </p>-->
+        </div>
+    </div>
+</div>
+<!--<div class="col-sm-12 col-xs-12 padding-left-right-5px">
+    <div class="form-group form-group-sm">
+        <label for="select{{item.idQuestion}}" class="overflow-ellipsis">{{item.nameQuestion}}</label>
+        <select class="form-control"
+                name="select{{item.idQuestion}}"
+                id="select{{item.idQuestion}}"
+                ng-model="model"
+                ng-change="change(model)">
+            <option value="" disabled selected>Seleccione una Opci&oacute;n</option>
+            <option ng-repeat="opt in item.possibleAnswers" value="{{opt}}">
+                {{opt.description}}
+            </option>
+        </select>
+        <div class="message-valid">
+            <p ng-if="form.select{{item.idQuestion}}.$error.required">
+                {{regex.required.description}}
+            </p>
+        </div>
+    </div>
+</div>-->

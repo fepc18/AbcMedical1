@@ -1,14 +1,57 @@
-﻿app.config(['$httpProvider', '$routeProvider', '$locationProvider', function ($httpProvider, $routeProvider, $locationProvider) {
+﻿/// <reference path="C:\Desarrollo\TG\AbcMedical\AbcMedical\Views/Shared/_LayoutHistory.cshtml" />
+app.config(['$httpProvider', '$routeProvider', '$locationProvider', function ($httpProvider, $routeProvider, $locationProvider) {
 
     $locationProvider.hashPrefix('!');
 
     $routeProvider
          .when('/', {
+
+           //  templateUrl: '/Views/Shared/_LayoutHistory.cshtml',
              templateUrl: '/content/app_views/History/History.html',
              //templateUrl: '/content/app_views/History/NewRegister.html',
              controller: 'HistoryController',
              controllerAs: 'History'
          })
+        .when('/NewRegister', {
+            templateUrl: '/content/app_views/History/NewRegister.html',
+            controller: 'NewRegisterController',
+            controllerAs: 'NewRegister'
+        })
+        .when('/NewRegister/CreateNota', {
+            templateUrl: '/content/app_views/History/Register/CreateNota.html',
+            controller: 'CreateNotaController',
+            controllerAs: 'Nota'
+        })
+        .when('/NewRegister/CreatePsicologia', {
+            templateUrl: '/content/app_views/History/Register/CreatePsicologia.html',
+            controller: 'CreatePsicologiaController',
+            controllerAs: 'Psicologia'
+        })
+        .when('/NewRegister/CreatePsiquiatria', {
+            templateUrl: '/content/app_views/History/Register/CreatePsiquiatria.html',
+            controller: 'CreatePsiquiatriaController',
+            controllerAs: 'Psiquiatria'
+        })
+        .when('/NewRegister/CreateTerapiaOcupacional', {
+            templateUrl: '/content/app_views/History/Register/CreateTerapiaOcupacional.html',
+            controller: 'CreateTerapiaOcupacionalController',
+            controllerAs: 'TerapiaOcupacional'
+        })
+        .when('/NewRegister/CreateSeguimientoSaludMental', {
+            templateUrl: '/content/app_views/History/Register/CreateSeguimientoSaludMental.html',
+            controller: 'CreateSeguimientoSaludMentalController',
+            controllerAs: 'SeguimientoSaludMental'
+        })
+        .when('/NewRegister/CreateTrabajoSocial', {
+            templateUrl: '/content/app_views/History/Register/CreateTrabajoSocial.html',
+            controller: 'CreateTrabajoSocialController',
+            controllerAs: 'TrabajoSocial'
+        })
+        .when('/ListRegister', {
+            templateUrl: '/content/app_views/History/Register/ListRegister.html',
+            controller: 'ListRegisterController',
+            controllerAs: 'ListRegister'
+        })
         /*.when('/', {
             templateUrl: '/content/app_views/dashboard/index.html',
             controller: 'dashboardController'

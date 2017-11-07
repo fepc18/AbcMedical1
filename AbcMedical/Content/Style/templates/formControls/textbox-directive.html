@@ -1,0 +1,59 @@
+﻿<div class="col-sm-12 col-xs-12 padding-left-right-5px" ng-class="size" ng-form="textboxDirective">
+    <div class="form-group form-group-sm" ng-if="item.idFieldType != '05'">
+        <label for="text{{item.idQuestion}}" class="overflow-ellipsis">{{item.idQuestion}} - {{item.nameQuestion}}</label>
+        <input type="text"
+               id="text{{item.idQuestion}}"
+               name="text{{item.idQuestion}}"
+               ng-model="$parent.model"
+               class="form-control"
+               placeholder=""
+               required
+               ng-minlength="2"
+               maxlength="50"
+               ng-pattern="{{item.regularExpression}}"/>
+
+        <div>
+            <div ng-show="textboxDirective.$dirty && textboxDirective.$invalid">
+                <p>prueba</p>
+                <span ng-show="textboxDirective.$error.required">Some validation error!</span>
+            </div>
+            <!--<p ng-if="form.text{{item.idQuestion}}.$error.pattern && !form.text{{item.idQuestion}}.$error.minlength">
+                {{regex.letters.general.description}}
+            </p>-->
+            <!--<p ng-if="formCustomerVerif.personalReferences1.$error.pattern && !formCustomerVerif.personalReferences1.$error.minlength">
+                {{regex.letters.general.description}}
+            </p>-->
+            <!--<p ng-if="form.text{{item.idQuestion}}.$error.minlength">
+                {{item.messageExpression}}
+            </p>-->
+        </div>
+    </div>
+    <div class="form-group form-group-sm" ng-if="item.idFieldType == '05'">
+        <label for="text{{item.idQuestion}}" class="overflow-ellipsis">{{item.idQuestion}} - {{item.nameQuestion}}</label>
+        <div class="input-group">
+            <input type="text"
+                   name="text{{item.idQuestion}}"
+                   uib-datepicker-popup="dd/MMMM/yyyy"
+                   class="form-control background-color-white"
+                   is-open="o_birthDate"
+                   close-text="Cerrar"
+                   current-text="Hoy"
+                   clear-text="Borrar"
+                   close-on-date-selection="true"
+                   datepicker-options="$rootScope.dateOptions"
+                   placeholder="Clickea el calendario"
+                   readonly
+                   required
+                   ng-click="o_birthDate = true"
+                   ng-model="$parent.model" />
+            <div class="input-group-addon cursor" ng-click="o_birthDate = true">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </div>
+        </div>
+        <!--<div class="message-valid">
+            <p ng-if="formCustomerVerif.birthDate.$error.required">
+                {{regex.required.description}}
+            </p>
+        </div>-->
+    </div>
+</div>

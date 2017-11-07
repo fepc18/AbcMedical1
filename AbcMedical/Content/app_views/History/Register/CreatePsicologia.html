@@ -1,0 +1,1545 @@
+﻿<div class="col-md-12 form">
+    <div class="content">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <i class="fa fa-folder-open-o"></i>   Nuevo Registro
+            </header>
+            <div class="panel panel-body">
+                <div class="form-horizontal">
+                    <h4>Psicologia</h4>
+                    <hr />
+
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Fecha</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="Fecha" placeholder="" disabled="disabled" ng-model="Psicologia.Registro.Fecha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail2">Hora</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="Hora" placeholder="" disabled="disabled" ng-model="Psicologia.Registro.Hora">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <header class="panel-heading" data-toggle="collapse" data-target="#datospersonales">
+                            Datos Personales
+                        </header>
+                        <div class="panel-body collapse in" id="datospersonales">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Acompañante</label>
+                                        </div>
+                                        <div class="col-md-1 col-xs-1">
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="col-md-5 col-xs-5">
+
+                                            <input class="label_radio" type="radio" ng-model="Psicologia.Registro.Acompanante" value="Si">
+
+                                        </div>
+                                        <div class="col-md-1 col-xs-1">
+                                            <label>No</label>
+                                        </div>
+                                        <div class="col-md-5 col-xs-5">
+                                            <input class="label_radio" type="radio" ng-model="Psicologia.Registro.Acompanante" value="No">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12" ng-if="Psicologia.Registro.Acompanante=='Si'">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Parentesco</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="Parentesco" name="Parentesco" placeholder="" ng-model="Psicologia.Registro.Parentesco" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div ng-class="Psicologia.Registro.OrientacionSexual=='Otro'?'col-md-6 col-xs-12':'col-md-12 col-xs-12'">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Orientación Sexual</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <select class="form-control" name="OrientacionSexual" id="OrientacionSexual" ng-model="Psicologia.Registro.OrientacionSexual">
+                                                <option value="Heterosexual">Heterosexual</option>
+                                                <option value="Homosexual">Homosexual</option>
+                                                <option value="Bisexual">Bisexual</option>
+                                                <option value="Intersexual">Intersexual</option>
+                                                <option value="Otro">Otro</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12" ng-if="Psicologia.Registro.OrientacionSexual=='Otro'">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>¿Cuál?</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="OrientacionSexualCual" name="OrientacionSexualCual" placeholder="" ng-model="Psicologia.Registro.OrientacionSexualCual" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div ng-class="Psicologia.Registro.NivelEducativo=='Otro'?'col-md-6 col-xs-12':'col-md-12 col-xs-12'">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Nivel Educativo</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <select class="form-control" name="NivelEducativo" id="NivelEducativo" ng-model="Psicologia.Registro.NivelEducativo">
+                                                    <option value="Heterosexual">Preescolar</option>
+                                                    <option value="Primaria">Primaria</option>
+                                                    <option value="Secundaria">Secundaria</option>
+                                                    <option value="Técnico">Técnico</option>
+                                                    <option value="Tecnólogo">Tecnólogo</option>
+                                                    <option value="Profesional">Profesional</option>
+                                                    <option value="Postgrado">Postgrado</option>
+                                                    <option value="Otro">Otro</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12" ng-if="Psicologia.Registro.NivelEducativo=='Otro'">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>¿Cuál?</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="NivelEducativoCual" name="NivelEducativoCual" placeholder="" ng-model="Psicologia.Registro.NivelEducativoCual" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Nivel Socioeconómico</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <select class="form-control" name="NivelSocioeconomico" id="NivelSocioeconomico" ng-model="Psicologia.Registro.NivelSocioeconomico">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Estado Civil</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <select class="form-control" name="EstadoCivil" id="EstadoCivil" ng-model="Psicologia.Registro.EstadoCivil">
+                                                <option value="Soltero-a" selected>Soltero-a</option>
+                                                <option value="Casado-a">Casado-a</option>
+                                                <option value="Divorciado-a">Divorciado-a</option>
+                                                <option value="Viudo-a">Viudo-a</option>
+                                                <option value="Unión Libre">Unión Libre</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Religión</label>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" id="Religion" name="Religion" placeholder="" ng-model="Psicologia.Registro.Religion" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <header class="panel-heading" data-toggle="collapse" data-target="#evolucionhistoria">
+                            Evolución de la Historia
+                        </header>
+                        <div class="panel-body collapse in" id="evolucionhistoria">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Motivo de Consulta</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="MotivoConsulta" placeholder="" ng-model="Psicologia.Registro.MotivoConsulta"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Factor Desencadenante y Mantenedor del problema</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="FactorDesencadenante" placeholder="" ng-model="Psicologia.Registro.FactorDesencadenante"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Área Escolar</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="AreaEscolar" placeholder="" ng-model="Psicologia.Registro.AreaEscolar"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Área Pareja</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="AreaPareja" placeholder="" ng-model="Psicologia.Registro.AreaPareja"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Área Laboral</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="AreaLaboral" placeholder="" ng-model="Psicologia.Registro.AreaLaboral"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Área Familiar</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="AreaFamiliar" placeholder="" ng-model="Psicologia.Registro.AreaFamiliar"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Área Sexual</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="AreaSexual" placeholder="" ng-model="Psicologia.Registro.AreaSexual"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Área Social</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="AreaSocial" placeholder="" ng-model="Psicologia.Registro.AreaSocial"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <header class="panel-heading" data-toggle="collapse" data-target="#tamizajeviolencia">
+                            Tamizaje de Violencia
+                        </header>
+                        <div class="panel-body collapse in" id="tamizajeviolencia">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>¿Usted ha sido víctima de violencia y/o maltrato?</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="VictimaViolencia" placeholder="" ng-model="Psicologia.Registro.VictimaViolencia"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>¿Alguna vez ha sido golpeada-o por su pareja?</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="Golpeada" placeholder="" ng-model="Psicologia.Registro.Golpeada"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>¿Usted se siente en riesgo?</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="SienteRiesgo" placeholder="" ng-model="Psicologia.Registro.SienteRiesgo"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>¿Usted quiero hablar de Ello y recibir atención psicológica</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="QuiereHablar" placeholder="" ng-model="Psicologia.Registro.QuiereHablar"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4><b>Tipo de Violencia</b></h4>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Violencia Física</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaFisica" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaFisica" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Violencia Psicológica</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaPsicologica" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaPsicologica" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Violencia Sexual</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaSexual" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaSexual" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Violencia Económica</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaEconomica" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaEconomica" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Violencia Patrimonial</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaPatrimonial" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ViolenciaPatrimonial" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Negligencia y/o Abandono</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Negligencia" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Negligencia" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Abuso Sexual</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AbusoSexual" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AbusoSexual" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Acoso Sexual</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AcosoSexual" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AcosoSexual" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Asalto Sexual</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AsaltoSexual" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AsaltoSexual" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Otro tipo de violencia</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="OtroTipoViolencia" placeholder="" ng-model="Psicologia.Registro.OtroTipoViolencia"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Antecedentes pasado de maltrato o/ violencia</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Denuncia o reporte sector justicia</label>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="text" id="DenunciaMaltrato" name="DenunciaMaltrato" placeholder="" ng-model="Psicologia.Registro.DenunciaMaltrato" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Fecha</label>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="text" id="FechaMaltrato" name="FechaMaltrato" placeholder="" ng-model="Psicologia.Registro.FechaMaltrato" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Ciudad</label>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="text" id="CiudadMaltrato" name="CiudadMaltrato" placeholder="" ng-model="Psicologia.Registro.CiudadMaltrato" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <header class="panel-heading" data-toggle="collapse" data-target="#anamnesis">
+                                    Anamnesis
+                                </header>
+                                <div class="panel-body collapse in" id="anamnesis">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Anamnesis</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="Anamnesis" placeholder="" ng-model="Psicologia.Registro.Anamnesis"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Antecedentes Patológicos</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="AntecedentesPatologicos" placeholder="" ng-model="Psicologia.Registro.AntecedentesPatologicos"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Antecedentes de Consumo</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Spa (sustancias psicoactivas)</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Spa" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Spa" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Alcohol</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Alcohol" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Alcohol" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Cigarrillo</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Cigarrillo" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.Cigarrillo" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Otro</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.OtroConsumo" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.OtroConsumo" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12" ng-if="Psicologia.Registro.OtroConsumo=='Si'">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>¿Cuál?</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="CualConsumo" name="CualConsumo" placeholder="" ng-model="Psicologia.Registro.CualConsumo" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Conducta Suicida</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Historia pasada de intento y/o hospitalización</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="HistoriaConductaSuicida" placeholder="" ng-model="Psicologia.Registro.HistoriaConductaSuicida"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Riesgo presente</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.RiesgoPresenteConductaSuicida" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.RiesgoPresenteConductaSuicida" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Remisión</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.RemisionConductaSuicida" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.RemisionConductaSuicida" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Red de Apoyo</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="RedApoyoConductaSuicida" name="RedApoyoConductaSuicida" placeholder="" ng-model="Psicologia.Registro.RedApoyoConductaSuicida" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Personas cercanas o historias de suicidio</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="PersonasCercanasConductaSuicida" name="PersonasCercanasConductaSuicida" placeholder="" ng-model="Psicologia.Registro.PersonasCercanasConductaSuicida" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <header class="panel-heading" data-toggle="collapse" data-target="#examenmental">
+                                    Examen Mental
+                                </header>
+                                <div class="panel-body collapse in" id="examenmental">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Apariencia, porte y actitud</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="AparienciaExamenMental" placeholder="" ng-model="Psicologia.Registro.AparienciaExamenMental"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Conducta Motora</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-3 ">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Agitación</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AgitacionExamenMental" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AgitacionExamenMental" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3 ">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Lentitud</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.LentitudExamenMental" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.LentitudExamenMental" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3 ">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Inhibición</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.InhibicionExamenMental" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.InhibicionExamenMental" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Otra</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Si</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.OtraExamenMental" value="Si">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-5">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.OtraExamenMental" value="No">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12" ng-if="Psicologia.Registro.OtraExamenMental=='Si'">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>¿Cuál?</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="CualExamenMental" name="CualExamenMental" placeholder="" ng-model="Psicologia.Registro.CualExamenMental" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-7 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Atención</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Euprosexia</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AtencionExamenMental" value="Euprosexia">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Hiprosexia</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AtencionExamenMental" value="Hiprosexia">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Aprosexia</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.AtencionExamenMental" value="Aprosexia">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5  col-xs-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Conciencia</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Alerta</label>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-3">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ConcienciaExamenMental" value="Euprosexia">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Estupor</label>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-3">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.ConcienciaExamenMental" value="Hiprosexia">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Orientación</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-3">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Tiempo</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="TiempoOrientacion" name="TiempoOrientacion" placeholder="" ng-model="Psicologia.Registro.TiempoOrientacion" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Lugar</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="LugarOrientacion" name="LugarOrientacion" placeholder="" ng-model="Psicologia.Registro.LugarOrientacion" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Persona</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="PersonaOrientacion" name="PersonaOrientacion" placeholder="" ng-model="Psicologia.Registro.PersonaOrientacion" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Lenguaje</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Velocidad</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Lento</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.VelocidadLenguaje" value="Lento">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Rápido</label>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.VelocidadLenguaje" value="Rápido">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Tono de voz</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Elevado</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.TonoVozLenguaje" value="Elevado">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Bajo</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.TonoVozLenguaje" value="Bajo">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Moderado</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.TonoVozLenguaje" value="Moderado">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <label>Curso</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Coherencia  </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CursoLenguaje" value="Coherencia">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Fluido</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CursoLenguaje" value="Fluido">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Bloqueo</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CursoLenguaje" value="Bloqueo">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Locuaz</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CursoLenguaje" value="Locuaz">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Perseverancia Monotono</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CursoLenguaje" value="Perseverancia Monotono">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Monotono</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CursoLenguaje" value="Monotono">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Calidad</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Verbosidad  </label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CalidadLenguaje" value="Verbosidad">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Laconismo</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CalidadLenguaje" value="Laconismo">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Mutismo</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CalidadLenguaje" value="Mutismo">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Escasa Comunicación</label>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-2">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.CalidadLenguaje" value="Escasa Comunicación">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Memoria</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Descripción Memoria</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="DescripcionMemoria" placeholder="" ng-model="Psicologia.Registro.DescripcionMemoria"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Juicio y Raciocinio</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Descripción Juicio Y Raciocinio</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="DescripcionJuicioRaciocinio" placeholder="" ng-model="Psicologia.Registro.DescripcionJuicioRaciocinio"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Pensamiento</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="Pensamiento" placeholder="" ng-model="Psicologia.Registro.Pensamiento"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Estado Afectivo</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Estado Animo</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Alegre  </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Alegre">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Decaído </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Decaído">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Lábil</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Lábil">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Eufórico </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Eufórico">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Triste   </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Triste">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Irritable</label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Irritable">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Inafectivo  </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Inafectivo">
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <label>Estable  </label>
+                                                    </div>
+                                                    <div class="col-md-1 col-xs-1">
+                                                        <input class="form-control" type="radio" ng-model="Psicologia.Registro.EstadoAnimo" value="Estable">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Impresión diagnostica de inteligencia</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="ImpresionDiagnosticaInteligencia" placeholder="" ng-model="Psicologia.Registro.ImpresionDiagnosticaInteligencia"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Hábitos</b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Sueño</label>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="SuenoHabitos" name="SuenoHabitos" placeholder="" ng-model="Psicologia.Registro.SuenoHabitos" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Alimentación</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" id="AlimentacionHabitos" name="AlimentacionHabitos" placeholder="" ng-model="Psicologia.Registro.AlimentacionHabitos" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Introspección </label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="InstrospeccionHabitos" placeholder="" ng-model="Psicologia.Registro.InstrospeccionHabitos"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Prospección</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="ProspeccionHabitos" placeholder="" ng-model="Psicologia.Registro.ProspeccionHabitos"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <header class="panel-heading" data-toggle="collapse" data-target="#evaluacionriesgo">
+                                    Evaluación de Riesgo
+                                </header>
+                                <div class="panel-body collapse in" id="evaluacionriesgo">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Evaluación de Riesgo</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="EvaluacionRiesgo" placeholder="" ng-model="Psicologia.Registro.EvaluacionRiesgo"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <header class="panel-heading" data-toggle="collapse" data-target="#intervencionprogramada">
+                                    Intervención Programada
+                                </header>
+                                <div class="panel-body collapse in" id="intervencionprogramada">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Primeros auxilios psicológicos</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="PrimerosAuxiliosPsicologicos" placeholder="" ng-model="Psicologia.Registro.PrimerosAuxiliosPsicologicos"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Remisión para tratamiento</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="RemisionTratamiento" placeholder="" ng-model="Psicologia.Registro.RemisionTratamiento"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Plan de intervención</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="PlanIntervencion" placeholder="" ng-model="Psicologia.Registro.PlanIntervencion"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Remisión intersectorial</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="RemisionIntersectorial" placeholder="" ng-model="Psicologia.Registro.RemisionIntersectorial"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Seguimiento y evolución</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="SeguimientoEvolucion" placeholder="" ng-model="Psicologia.Registro.SeguimientoEvolucion"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Información y educación</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="InformacionEducacion" placeholder="" ng-model="Psicologia.Registro.InformacionEducacion"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-12 col-md-12">
+                                    <input type="button" value="Guardar" ng-click="Psicologia.save()" class="btn btn-success" />
+                                </div>
+                            </div>
+                            <message-custom type="info" title="Operación Finalizada" ng-if="Psicologia.savedOK" funct="Psicologia.LoadHistory()" messageButton="Aceptar"
+                                            message="Registro guardado exitosamente!">
+                            </message-custom>
+                            <message-custom type="info" big ng-if="Psicologia.savedFail"
+                                            message="{{Psicologia.messageFail}}">
+                            </message-custom>
+                        </div>
+                    </div>
+</section>
+        </div>
+   </div>

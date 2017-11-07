@@ -1,5 +1,4 @@
-﻿{{History.identificacion}}
-
+﻿
 <div class="col-md-12 form">
     <div class="content">
         <section class="panel panel-default">
@@ -15,39 +14,19 @@
                             </div>
                         </div>
 
+                    </div>                    
+                    <div class="form-group">
+                        <div class="row" ng-repeat="item in NewRegister.listRegistros">
+
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-10">
+                                <button class="btn btn-success btn-xs" ng-click="NewRegister.newRegister(item.RegistroClinicoId,item.Controller)"><i class="fa fa-check"></i></button>
+                                {{item.Nombre}}
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="col-md-2">
-                            </div>
-                                <div class="col-md-10">
-                                    <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                    Registro Clínico de Psicologia
-                                </div>
-                            </div>
-
-                        </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="col-md-2">
-                            </div>
-                            <div class="col-md-10">
-                                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                Seguimiento de Salud Mental
-                            </div>
-                        </div>
-                        </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="col-md-2">
-                            </div>
-                            <div class="col-md-10">
-                                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-
-                                Registro Clínico de Psiquiatria
-                            </div>
-                        </div>
-                        </div>
+                    
 
                 </form>
             </div>

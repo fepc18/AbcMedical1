@@ -1,0 +1,11 @@
+﻿<div class="padding-left-right-5px animate-if">
+    <div class="form-group form-group-sm" show-errors>
+        <label class="overflow-ellipsis">{{item.idQuestion}} - {{item.nameQuestion}}</label>
+        <div class="fb-conditional">
+            <div class="radio-inline custom-check" style="height:30px;padding-top:5px" ng-repeat="answer in item.possibleAnswers">
+                <input type="radio" name="radio{{item.idQuestion}}" id="radio{{answer.consecutive}}" ng-click="change(answer)" value="{{answer.consecutive}}" ng-model="model">
+                <label for="radio{{answer.consecutive}}">{{answer.description}}</label>
+            </div>
+        </div>
+    </div>
+</div>
