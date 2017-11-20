@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +47,13 @@
     <Compile Include="Administracion\Api\OutGetRegistros.cs" />
     <Compile Include="Administracion\Api\InGetRegistros.cs" />
     <Compile Include="Administracion\Api\PacienteResponse.cs" />
+    <Compile Include="Administracion\CargarFirma.cs" />
     <Compile Include="Administracion\Ciudad.cs" />
     <Compile Include="Administracion\CompanyClient.cs" />
     <Compile Include="Administracion\Departamento.cs" />
     <Compile Include="Administracion\Diagnostico.cs" />
     <Compile Include="Administracion\Etnia.cs" />
+    <Compile Include="Administracion\ProfesionalFirma.cs" />
     <Compile Include="Administracion\RegistroClinico.cs" />
     <Compile Include="Administracion\TipoSangre.cs" />
     <Compile Include="Administracion\TipoUsuario.cs" />
@@ -63,6 +66,10 @@
     <Compile Include="Administracion\Profesional.cs" />
     <Compile Include="Administracion\PuestoAtencion.cs" />
     <Compile Include="Administracion\TipoIdentificacion.cs" />
+    <Compile Include="ArchivoDigital\AnexoPaciente.cs" />
+    <Compile Include="ArchivoDigital\ArchivoDigital.cs" />
+    <Compile Include="ArchivoDigital\CargarArchivoDigital.cs" />
+    <Compile Include="ArchivoDigital\Volumen.cs" />
     <Compile Include="Historia\Api\InGetRegistrosHistorial.cs" />
     <Compile Include="Historia\Api\OutGetResumenRegistrosHistorial.cs" />
     <Compile Include="Historia\Api\OutGetRegistrosHistorial.cs" />

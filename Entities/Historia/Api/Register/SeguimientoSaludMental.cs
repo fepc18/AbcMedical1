@@ -8,6 +8,8 @@ namespace Entities.Historia.Api.Register
 {
     public class SeguimientoSaludMental
     {
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
         public string Autoevaluacion { get; set; }
         public string NivelPermanencia { get; set; }
         public string NivelConvivencia { get; set; }

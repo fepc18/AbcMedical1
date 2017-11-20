@@ -8,11 +8,13 @@ namespace Entities.Historia.Api.Register
 {
     public class TerapiaOcupacional
     {
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
         public string CalidadInformacion { get; set; }
         public string Hijos { get; set; }
         public string MotivoConsulta { get; set; }
         public string EntornosRiesgo { get; set; }
-        public List<TablaConsumo> TablaConsumo { get; set; }
+       // public List<TablaConsumo> TablaConsumo { get; set; }
         public string PersonalidadPrevia { get; set; }
 
         public string PatologicosAntecedentes { get; set; }
@@ -89,7 +91,7 @@ namespace Entities.Historia.Api.Register
         public string Escolaridad { get; set; }
         public string Empleo { get; set; }
         public string TrabajoVoluntario { get; set; }
-        public string OrganizaciónHogar { get; set; }
+        public string OrganizacionHogar { get; set; }
         public string CuidadoOtros { get; set; }
         public string Meta { get; set; }
         public string ObjetivoGeneral { get; set; }

@@ -1,0 +1,51 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Archivo Digital
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+        @model IEnumerable<Entities.ArchivoDigital.Archivo>
+        @{
+            ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_LayoutDigitalization.cshtml";
+        }
+        <h2>Listado de Archivos Cargados</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaOperacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Observacion)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaOperacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Observacion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Ver Archivo", "VerArchivo", new { id = item.ArchivoId }) |
+                        @Html.ActionLink("Descargar Archivo", "Descargar", new { id = item.ArchivoId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ArchivoId }, new { onclick = "return confirm('Esta seguro de eliminar?');" })
+
+
+                    </td>
+                </tr>
+            }
+        </table>
+        <div>
+            @Html.ActionLink("Volver a Cargar", "Create", "CargarArchivoDigital")
+        </div>
+    </div>
+</section>

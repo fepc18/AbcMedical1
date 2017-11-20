@@ -1,0 +1,37 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Tipos de Anexo
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+        @model IEnumerable<Entities.ArchivoDigital.TipoAnexo>
+        @{
+            ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_LayoutDigitalization.cshtml";
+        }
+        <p>
+            @Html.ActionLink("Crear Tipo de Anexo", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.TipoAnexoId }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.TipoAnexoId }) 
+
+                    </td>
+                   
+                </tr>
+            }
+        </table>
+    </div>
+</section>

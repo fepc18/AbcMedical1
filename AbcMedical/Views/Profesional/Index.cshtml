@@ -73,7 +73,8 @@
                     </td>
                     <td>
                         @Html.ActionLink("Editar", "Edit", new { id = item.ProfesionalId }) |                        
-                        @Html.ActionLink("Eliminar", "Delete", new { id = item.ProfesionalId })
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.ProfesionalId }) | 
+                        @Html.ActionLink("Cargar Firma", "UploadSign", new { id = item.ProfesionalId }) | 
                     </td>
                 </tr>
             }

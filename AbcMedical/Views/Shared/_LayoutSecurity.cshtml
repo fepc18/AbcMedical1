@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -38,7 +37,6 @@
                         <!--<li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>-->
                         <li><a href="/Usuario/ChangePassword"><i class="fa fa-key"></i> Cambiar contraseña</a></li>
                         <li><a href="/Login/Logoff"><i class="fa fa-window-close-o "></i> Cerrar Sesión</a></li>
-
                     </ul>
                 </li>
                 <!-- <li class="sb-toggle-right">
@@ -50,40 +48,36 @@
         </div>
     </header>
     <section id="container">
-        <aside>
-            <div id="sidebar" class="nav-collapse " style="overflow: hidden; outline: none;" tabindex="0">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <!-- <li>
-                         <a class="active" href="index.html">
-                             <i class="fa fa-dashboard"></i>
-                             <span>Dashboard</span>
-                         </a>
-                     </li>-->
-                    <li></li>
-                    <li class="sub-menu dcjq-parent-li">
-                        <a href="~/Home/Index"><i class="fa fa-home"></i> Home</a>
-                        <a href="~/Usuario"><i class="fa fa-users"></i> Usuarios</a>
-                        <a href="~/Perfil"><i class="fa fa-lock"></i> Perfiles</a>
-                        <a href="~/MatrizSeguridad"><i class="fa fa-list-ul"></i> Matriz de Seguridad</a>                        
-                    </li>
-                    <!--multi level menu end-->
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-md-2 col-xs-12" id="sidebar">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li class="sub-menu dcjq-parent-li">
+                            <a href="~/Home/Index"><i class="fa fa-home"></i> Home</a>
+                            <a href="~/Usuario"><i class="fa fa-users"></i> Usuarios</a>
+                            <a href="~/Perfil"><i class="fa fa-lock"></i> Perfiles</a>
+                            <a href="~/MatrizSeguridad"><i class="fa fa-list-ul"></i> Matriz de Seguridad</a>
+                        </li>
+                        
+                    </ul>
+                    <br />
+                </div>
+                <div class="col-md-10 col-xs-12">
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                    <hr />
+                    <footer>
+                        <p>&copy; @DateTime.Now.Year - Abc Medical</p>
+                    </footer>
+                </div>
 
-                </ul>
-                <!-- sidebar menu end-->
             </div>
-        </aside>
-        <section id="main-content">
-            <section class="wrapper">
 
-                @RenderBody()
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - Abc Medical</p>
-                </footer>
 
-            </section>
+
         </section>
+
     </section>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

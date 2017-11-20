@@ -1,4 +1,4 @@
-﻿app.controller("CreateTerapiaOcupacionalController", ['$scope', '$rootScope', 'AdminitrationFactory', '$location', 'HistoryFactory', 
+﻿    app.controller("CreateTerapiaOcupacionalController", ['$scope', '$rootScope', 'AdminitrationFactory', '$location', 'HistoryFactory', 
     function ($scope, $rootScope, AdminitrationFactory, $location, HistoryFactory ) {
 
         var vm = this;
@@ -22,7 +22,7 @@
         vm.Registro.Hijos = "";
         vm.Registro.MotivoConsulta = "";
         vm.Registro.EntornosRiesgo = "";
-        vm.Registro.publicList<TablaConsumo>TablaConsumo = "";
+        vm.Registro.TablaConsumo = {};
         vm.Registro.PersonalidadPrevia = "";
         vm.Registro.PatologicosAntecedentes = "";
         vm.Registro.FarmacologicosAntecedentes = "";
@@ -79,7 +79,7 @@
         vm.Registro.Escolaridad = "";
         vm.Registro.Empleo = "";
         vm.Registro.TrabajoVoluntario = "";
-        vm.Registro.OrganizaciónHogar = "";
+        vm.Registro.OrganizacionHogar = "";
         vm.Registro.CuidadoOtros = "";
         vm.Registro.Meta = "";
         vm.Registro.ObjetivoGeneral = "";

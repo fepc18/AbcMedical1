@@ -3,7 +3,7 @@
 
         var vm = this;
         vm.dataRequest = {};
-        vm.RegistroClinicoId = 1;
+        vm.RegistroClinicoId = 5;
 
         vm.listRegistros = [];      
         
@@ -86,7 +86,7 @@
             vm.RegistroHistoria.CompanyCLientId = "1";
             vm.RegistroHistoria.PacienteId = $rootScope.PacienteId;
             vm.RegistroHistoria.RegistroClinicoId = vm.RegistroClinicoId;
-            vm.RegistroHistoria.Asunto = vm.Registro.MotivoConsulta;
+            vm.RegistroHistoria.Asunto = vm.Registro.Conclusiones;
             vm.RegistroHistoria.UsuarioId = "1";
             //vm.RegistroHistoria.UsuarioId = $rootScope.UsuarioId;
             vm.RegistroHistoria.ProfesionalId = "1";

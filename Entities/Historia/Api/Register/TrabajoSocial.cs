@@ -8,12 +8,14 @@ namespace Entities.Historia.Api.Register
 {
     public class TrabajoSocial
     {
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
         public string AreaPersonal { get; set; }
         public string AreaFamiliar { get; set; }
         public string AreaSexual { get; set; }
         public string AreaLaboral { get; set; }
         public string AreaPareja { get; set; }
-        public List<ComposicionFamiliar> ComposicionFamiliar { get; set; }
+    //    public List<ComposicionFamiliar> ComposicionFamiliar { get; set; }
         public string TipoFamilia { get; set; }
         public string OtroTipoFamilia { get; set; }
         public string ProblematicaFamiliar { get; set; }
@@ -30,7 +32,7 @@ namespace Entities.Historia.Api.Register
         public string ExistenciaestablecimientosEducativos { get; set; }
         public string PrincipalesLideresReconocidos { get; set; }
         public string PrincipalesInstitucionesPresentes { get; set; }
-        public List<TratamientosAnteriores> TratamientosAnteriores { get; set; }
+    //    public List<TratamientosAnteriores> TratamientosAnteriores { get; set; }
 
         public string EvaluacionRiesgo { get; set; }
         public string Conclusiones { get; set; }

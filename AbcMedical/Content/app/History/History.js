@@ -25,6 +25,14 @@
         vm.newRegister = function () {
             $location.path('/NewRegister');
         }
+        vm.openFiles = function () {
+          //  $location.url($location.path());
+            //$location(window.location+"/CargarArchivoDigital/ListadoPublico?id=" + $rootScope.PacienteId);
+           // window.location.href = "/CargarArchivoDigital/ListadoPublico?id=" + $rootScope.PacienteId;
+
+            window.open("/CargarArchivoDigital/ListadoPublico?id=" + $rootScope.PacienteId, '_blank');
+        }
+        
 
         vm.ListRegister = function (RegistroClinicoId) {
             $location.path("/ListRegister?RegistroClinicoId=" + RegistroClinicoId);

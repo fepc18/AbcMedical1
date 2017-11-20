@@ -138,6 +138,56 @@ namespace AbcMedical.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Profesional/Create
+        public ActionResult UploadSign()
+        {
+            ViewData["ProfesionalId"] = "1";
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UploadSign(CargarFirma model)
+        {
+            if (System.Web.HttpContext.Current.Session["User"] == null)
+                return View("Login", "Account");
+            try
+            {
+                var file = model.Archivo;
+                if (file != null && file.ContentLength > 0)
+                {
+
+                    string usuario = System.Web.HttpContext.Current.Session["User"].ToString();
+                    
+                    System.IO.MemoryStream target = new System.IO.MemoryStream();
+                    model.Archivo.InputStream.CopyTo(target);
+                    byte[] dataFirma = target.ToArray();
+                    
+                    //validar si ya tiene una firma
+                    var firma = db.ProfesionalFirma.Where(x => x.ProfesionalId == model.ProfesionalId).FirstOrDefault();
+                    if (firma == null)
+                    {
+                        firma = new ProfesionalFirma();
+                        firma.ProfesionalId = model.ProfesionalId;
+                        firma.Firma64 = Convert.ToBase64String(dataFirma);
+                        db.ProfesionalFirma.Add(firma);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        firma.ProfesionalId = model.ProfesionalId;
+                        firma.Firma64 = Convert.ToBase64String(dataFirma);
+                        db.Entry(firma).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                return View();
+            }
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

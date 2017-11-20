@@ -41,8 +41,13 @@ namespace AbcMedical.Controllers
 
             return RedirectToAction("Index", "History");
         }
+        public ActionResult goDigitalization()
+        {
+
+            return RedirectToAction("Index", "ArchivoDigital");
+        }
 
 
-        
+
     }
 }

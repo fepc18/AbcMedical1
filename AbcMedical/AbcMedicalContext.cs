@@ -24,6 +24,7 @@ public class AbcMedicalContext : DbContext
     public System.Data.Entity.DbSet<Entities.Administracion.CompanyClient> CompanyClient { get; set; }
 
     public System.Data.Entity.DbSet<Entities.Administracion.Profesional> Profesionals { get; set; }
+    public System.Data.Entity.DbSet<Entities.Administracion.ProfesionalFirma> ProfesionalFirma { get; set; }
 
     public System.Data.Entity.DbSet<Entities.Seguridad.Usuario> Usuarios { get; set; }
 
@@ -52,4 +53,12 @@ public class AbcMedicalContext : DbContext
     public System.Data.Entity.DbSet<Entities.Seguridad.Perfil> Perfils { get; set; }
     public System.Data.Entity.DbSet<Entities.Administracion.RegistroClinico> RegistroClinico { get; set; }
     public System.Data.Entity.DbSet<Entities.Historia.RegistroHistoria> RegistroHistoria { get; set; }
+
+
+
+    public System.Data.Entity.DbSet<Entities.ArchivoDigital.AnexoPaciente> AnexoPaciente { get; set; }
+    public System.Data.Entity.DbSet<Entities.ArchivoDigital.Archivo> Archivo { get; set; }
+    public System.Data.Entity.DbSet<Entities.ArchivoDigital.TipoAnexo> TipoAnexo { get; set; }
+    public System.Data.Entity.DbSet<Entities.ArchivoDigital.Volumen> Volumen { get; set; }
+
 }

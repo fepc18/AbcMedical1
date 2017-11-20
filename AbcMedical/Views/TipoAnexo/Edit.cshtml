@@ -1,0 +1,42 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Puestos de Atención
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+        @model Entities.ArchivoDigital.TipoAnexo
+        @{
+            ViewBag.Title = "Edit";
+            Layout = "~/Views/Shared/_LayoutDigitalization.cshtml";
+        }
+        <h4>Editar Tipo de Anexo</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>TipoAnexo</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.TipoAnexoId)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-5">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
+                        </div>
+                        <div class="col-md-4">
+                            @Html.ActionLink("Regresar al listado", "Index", null, new { @class = "btn btn-warning" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        
+    </div>
+</section>

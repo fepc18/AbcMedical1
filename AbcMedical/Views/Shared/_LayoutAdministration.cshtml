@@ -38,7 +38,6 @@
                         <!--<li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>-->
                         <li><a href="/Usuario/ChangePassword"><i class="fa fa-key"></i> Cambiar contraseña</a></li>
                         <li><a href="/Login/Logoff"><i class="fa fa-window-close-o "></i> Cerrar Sesión</a></li>
-
                     </ul>
                 </li>
                 <!-- <li class="sb-toggle-right">
@@ -49,46 +48,41 @@
             <!--search & user info end-->
         </div>
     </header>
- <section id="container">
-        <aside>
-            <div id="sidebar" class="nav-collapse " style="overflow: hidden; outline: none;" tabindex="0">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <!-- <li>
-                         <a class="active" href="index.html">
-                             <i class="fa fa-dashboard"></i>
-                             <span>Dashboard</span>
-                         </a>
-                     </li>-->
-                    <li></li>
-                    <li class="sub-menu dcjq-parent-li">
-                        <a href="~/Home/Index"><i class="fa fa-home"></i> Home</a>
-                        <a href="~/Profesional"><i class="fa fa-user-md"></i> Profesionales</a>
-                        <a href="~/PuestoAtencion"><i class="fa fa-hospital-o"></i> Puestos de Atención</a>
-                        <a href="~/Especialidad"><i class="fa fa-medkit"></i> Especialidades</a>
-                        <a href="~/Diagnostico"><i class="fa fa-stethoscope"></i> Diagnósticos</a>
-                        <a href="~/Paciente"><i class="fa fa-users"></i> Pacientes</a>
-                    </li>
-                    <!--multi level menu end-->
-
-                </ul>
-                <!-- sidebar menu end-->
+    <section id="container">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-md-2 col-xs-12" id="sidebar">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li class="sub-menu dcjq-parent-li">
+                            <a href="~/Home/Index"><i class="fa fa-home"></i> Home</a>
+                            <a href="~/Profesional"><i class="fa fa-user-md"></i> Profesionales</a>
+                            <a href="~/PuestoAtencion"><i class="fa fa-hospital-o"></i> Puestos de Atención</a>
+                            <a href="~/Especialidad"><i class="fa fa-medkit"></i> Especialidades</a>
+                            <a href="~/Diagnostico"><i class="fa fa-stethoscope"></i> Diagnósticos</a>
+                            <a href="~/Paciente"><i class="fa fa-users"></i> Pacientes</a>
+                        </li>                        
+                    </ul>    
+                    <br/>              
+                </div>
+                <div class="col-md-10 col-xs-12" >
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                    <hr />
+                    <footer>
+                        <p>&copy; @DateTime.Now.Year - Abc Medical</p>
+                    </footer>
+                </div>
+                
             </div>
-        </aside>
-        <section id="main-content">
-            <section class="wrapper">
 
-                @RenderBody()
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - Abc Medical</p>
-                </footer>
-
-            </section>
+           
+            
         </section>
-    </section>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+               
+        </section>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

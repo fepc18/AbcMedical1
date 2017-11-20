@@ -173,26 +173,20 @@ a, a:hover, a:focus {
 /*sidebar navigation*/
 
 #sidebar {
-    width: 210px;
-    height: 100%;
-    position: fixed;
+    
     background: #2a3542;
-    overflow-y: scroll;
+ 
 }
-#sidebarHistory {
-    width: 230px;
-    height: 100%;
-    position: fixed;
+#sidebarHistory {   
+    height: 100%;    
     background: #2a3542;
     overflow-y: scroll;
 }
 
 #sidebar {
-    width: 210px;
-    height: 100%;
-    position: fixed;
+    height: 100%;   
     background: #2a3542;
-    overflow-y: scroll;
+    
 }
 
 #sidebar ul li {
@@ -200,7 +194,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sub-menu > .sub li  {
-    padding-left: 32px;
+    padding-left: 20px;
 }
 
 #sidebar .sub-menu > .sub li:last-child {
