@@ -114,7 +114,7 @@ namespace AbcMedical.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PacienteId,CompanyClientId,TipoIdentificacionId,Identificacion,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,Sexo,FechaNacimiento,RegimenId,ProfesionId,Nivel,Zona,EstadoCivilId,TipoUsuarioId,Direccion,Barrio,CiudadId,TelefonoResidencia,TelefonoOficina,TipoSangreId,EtniaId,EscolaridadId,FechaAfiliacion,Activo")] Paciente paciente)
+        public ActionResult Edit(Paciente paciente)
         {
             if (ModelState.IsValid)
             {

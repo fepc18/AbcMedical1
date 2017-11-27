@@ -1,5 +1,5 @@
-﻿app.controller("HistoryController", ['$scope', '$rootScope', 'AdminitrationFactory','$location','HistoryFactory',
-    function ($scope, $rootScope, AdminitrationFactory, $location, HistoryFactory) {
+﻿app.controller("HistoryController", ['$scope', '$rootScope', 'AdminitrationFactory','$location','HistoryFactory','$routeParams',
+    function ($scope, $rootScope, AdminitrationFactory, $location, HistoryFactory, $routeParams) {
 
         var vm = this;
 
@@ -8,7 +8,13 @@
         //******************//
         // DATOS PACIENTE   //
         //******************//
+        
+        vm.Username = $("#hdnUserName").val();
+        vm.UserId = $("#hdnUserId").val();
+        vm.ProfesionalId = $("#hdnProfesionalId").val();
 
+        $rootScope.UserId = vm.UserId;
+        $rootScope.ProfesionalId = vm.ProfesionalId;
         vm.pacienteId = "0";
         vm.identificacion = "";
         vm.nombreCompleto = "";
@@ -16,7 +22,8 @@
         vm.edad = "";
         vm.direccion = "";
         vm.telefonos = "";
-
+        vm.Fail=false;
+        vm.messageFail="";
 
         vm.RequestHistorialRegistros = {};
 
@@ -49,7 +56,8 @@
                     // var PacienteId = 1;//$rootScope.IdRequisitionEdit;
 
                     AdminitrationFactory.getPaciente(PacienteDocument).then(function (data_) {
-                      
+                        
+                        vm.Fail = false;
                         if (data_.state) {
                             vm.identificacion = data_.data.Identificacion;
                             vm.pacienteId = data_.data.PacienteId;
@@ -60,6 +68,12 @@
                             vm.direccion = data_.data.Direccion;
                             vm.telefonos = data_.data.TelefonoResidencia + " " + data_.data.TelefonoOficina;
                             base.getResumenHistorialRegistros();
+                            $location.path("/");
+                            $location.url($location.path());
+                        }
+                        else {
+                            vm.Fail = true;
+                            vm.messageFail = "El paciente buscado no existe.";
                         }
                     });
                 },
@@ -67,7 +81,7 @@
                     vm.RequestHistorialRegistros.PacienteId = $rootScope.PacienteId;
                     vm.RequestHistorialRegistros.CompanyCLientId = "1";
                     //vm.RegistroHistoria.CompanyCLientId = $rootScope.CompanyCLientId;
-                    vm.RequestHistorialRegistros.UsuarioId = "1";
+                    vm.RequestHistorialRegistros.UsuarioId = vm.UserId;
                     //vm.RegistroHistoria.UsuarioId = $rootScope.UsuarioId;
                     var dataJson = JSON.stringify(vm.RequestHistorialRegistros);
                     debugger;

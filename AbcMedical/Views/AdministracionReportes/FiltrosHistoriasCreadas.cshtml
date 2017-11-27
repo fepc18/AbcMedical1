@@ -1,0 +1,82 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Historias Creadas
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+
+     
+        @model Entities.Administracion.Reportes.FiltrosHistoriasCreadas
+        @{
+            ViewBag.Title = "Create";
+            Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
+        }
+
+        <h4>Crear Paciente</h4>
+
+        @using (Html.BeginForm("FiltrosHistoriasCreadas", "AdministracionReportes", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal tasi-form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PuestoAtencionId, "Puesto Atención", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("PuestoAtencionId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PuestoAtencionId, "", new { @class = "text-danger" })
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProfesionalId, "Profesional", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ProfesionalId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ProfesionalId, "", new { @class = "text-danger" })
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DiagnosticoId, "Diagnostico", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("DiagnosticoId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DiagnosticoId, "", new { @class = "text-danger" })
+                        
+                    </div>
+                </div>
+                
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FechaInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FechaInicio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FechaFin, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FechaFin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FechaFin, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-5">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Consultar</button>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        }
+
+        
+
+    </div>
+</section>

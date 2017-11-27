@@ -72,10 +72,10 @@
             vm.RegistroHistoria.PacienteId = $rootScope.PacienteId;
             vm.RegistroHistoria.RegistroClinicoId = vm.RegistroClinicoId;
             vm.RegistroHistoria.Asunto = vm.Registro.Asunto;
-            vm.RegistroHistoria.UsuarioId = "1";
+            vm.RegistroHistoria.UsuarioId = $rootScope.UserId;
             //vm.RegistroHistoria.UsuarioId = $rootScope.UsuarioId;
-            vm.RegistroHistoria.ProfesionalId = "1";
-            //vm.RegistroHistoria.ProfesionalId = $rootScope.ProfesionalId;
+            //vm.RegistroHistoria.ProfesionalId = "1";
+            vm.RegistroHistoria.ProfesionalId = $rootScope.ProfesionalId;
             
             vm.RegistroHistoria.Diagnostico = "0";
             vm.RegistroHistoria.DiagnosticoRelacionado1 = "0";

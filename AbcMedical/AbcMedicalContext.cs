@@ -54,7 +54,7 @@ public class AbcMedicalContext : DbContext
     public System.Data.Entity.DbSet<Entities.Administracion.RegistroClinico> RegistroClinico { get; set; }
     public System.Data.Entity.DbSet<Entities.Historia.RegistroHistoria> RegistroHistoria { get; set; }
 
-
+    public System.Data.Entity.DbSet<Entities.Seguridad.Log> Logs { get; set; }
 
     public System.Data.Entity.DbSet<Entities.ArchivoDigital.AnexoPaciente> AnexoPaciente { get; set; }
     public System.Data.Entity.DbSet<Entities.ArchivoDigital.Archivo> Archivo { get; set; }

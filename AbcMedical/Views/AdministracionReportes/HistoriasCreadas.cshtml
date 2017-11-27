@@ -1,0 +1,49 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Historias Creadas
+    </header>
+    <div class="panel-body" style="padding-bottom:40px;">
+
+        @model IEnumerable<Entities.Historia.RegistroHistoria>
+
+        @{
+            ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_LayoutAdministration.cshtml";
+        }
+
+        
+
+        <table class="table">
+            <tr>
+
+                <th>
+                    Paciente
+                </th>
+                <th>
+                    Fecha Atención
+                </th>
+                <th>
+                    Diagnóstico
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Paciente.PrimerNombre) @Html.DisplayFor(modelItem => item.Paciente.SegundoNombre) @Html.DisplayFor(modelItem => item.Paciente.PrimerApellido) @Html.DisplayFor(modelItem => item.Paciente.SegundoApellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Diagnostico)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

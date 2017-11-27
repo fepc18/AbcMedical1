@@ -55,6 +55,7 @@
     <Compile Include="Administracion\Etnia.cs" />
     <Compile Include="Administracion\ProfesionalFirma.cs" />
     <Compile Include="Administracion\RegistroClinico.cs" />
+    <Compile Include="Administracion\Reportes\FiltrosHistoriasCreadas.cs" />
     <Compile Include="Administracion\TipoSangre.cs" />
     <Compile Include="Administracion\TipoUsuario.cs" />
     <Compile Include="Administracion\Escolaridad.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Historia\RegistroHistoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\ChangePassword.cs" />
+    <Compile Include="Seguridad\Log.cs" />
     <Compile Include="Seguridad\Login.cs" />
     <Compile Include="Seguridad\Perfil.cs" />
     <Compile Include="Seguridad\Usuario.cs" />

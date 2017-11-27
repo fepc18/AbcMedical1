@@ -1,5 +1,4 @@
-﻿/// <reference path="C:\Desarrollo\TG\AbcMedical\AbcMedical\Views/Shared/_LayoutHistory.cshtml" />
-app.config(['$httpProvider', '$routeProvider', '$locationProvider', function ($httpProvider, $routeProvider, $locationProvider) {
+﻿app.config(['$httpProvider', '$routeProvider', '$locationProvider', function ($httpProvider, $routeProvider, $locationProvider) {
 
     $locationProvider.hashPrefix('!');
 

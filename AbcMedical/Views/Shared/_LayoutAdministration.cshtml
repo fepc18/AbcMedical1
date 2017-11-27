@@ -60,10 +60,20 @@
                             <a href="~/Especialidad"><i class="fa fa-medkit"></i> Especialidades</a>
                             <a href="~/Diagnostico"><i class="fa fa-stethoscope"></i> Diagnósticos</a>
                             <a href="~/Paciente"><i class="fa fa-users"></i> Pacientes</a>
-                        </li>                        
-                    </ul>    
-                    <br/>              
-                </div>
+                            <ul class="sidebar-menu">
+                                <li class="sub-menu dcjq-parent-li">
+                                    <i class="fa fa-book"></i>
+                                    <span>Reportes</span>
+                                    <li class="sub">
+                                        <a href="~/AdministracionReportes/PacientesActivos"><i class="fa fa-users"></i> Pacientes Activos </a>
+                                        <a href="~/AdministracionReportes/FiltrosHistoriasCreadas"><i class="fa fa-files-o"></i> Historias Creadas</a>
+                                    </li>
+                                </li>
+                            </ul>
+                        </li> 
+                    </ul>
+                     <br />
+               </div>
                 <div class="col-md-10 col-xs-12" >
                     <div class="row">
                         @RenderBody()

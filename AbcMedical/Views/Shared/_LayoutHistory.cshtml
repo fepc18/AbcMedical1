@@ -15,7 +15,7 @@
     <script src="~/lib/angular-resource/angular-resource.js"></script>
     <script src="~/lib/angular-route/angular-route.js"></script>
     <script src="~/lib/angular-sanitize/angular-sanitize.js"></script>
-    @*<script src="~/lib/angular-tree-control/angular-tree-control.js"></script>*@
+    
 
     <script src="~/lib/angular-filter/dist/angular-filter.min.js"></script>
     <script src="~/lib/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
@@ -24,6 +24,8 @@
     <script src="~/Content/app-route.js"></script>
     <script src="~/Content/app-interceptor.js"></script>
     
+
+
     
 
     <script src="~/Content/factories/tools/fac-memory.js"></script>
@@ -79,15 +81,12 @@
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <!-- <img alt="" src="img/avatar1_small.jpg">-->
-                                <span class="username">Jhon Doue</span>
+                                <span class="username">{{History.Username}}</span>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu extended logout">
                                 <div class="log-arrow-up"></div>
-                                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                                <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
-                                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                               
                             </ul>
                         </li>
                         <li class="sb-toggle-right">
@@ -109,18 +108,23 @@
                                         <header class="panel-heading">
                                             <i class="fa fa-folder-open-o"></i>   Abrir Historia
                                         </header>
+                                         <input id="hdnUserName" nme="hdnUserName" value=@ViewBag.Username runat="server" type="hidden" />
+                                         <input id="hdnUserId" nme="hdnUserId" value=@ViewBag.UserId runat="server" type="hidden" />
+                                         <input id="hdnProfesionalId" nme="hdnProfesionalId" value=@ViewBag.ProfesionalId runat="server" type="hidden" />
                                         <div class="panel-body">
 
-                                            <div class="col-md-9">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Identificación</label>
                                                     <input class="form-control" id="InputIdentificacion" placeholder="Ingrese Identificación" ng-model="History.documentFind">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-12">
                                                 <button  class="btn btn-info" ng-click="History.consultPaciente()">Buscar</button>                                                
                                             </div>
-
+                                            <message-custom type="info" small ng-if="History.Fail"
+                                                            message="El paciente buscado no existe.">
+                                            </message-custom>
 
                                         </div>
                                     </section> 
@@ -170,17 +174,11 @@
                                                             <label for="exampleInputEmail1"><b>{{History.direccion}}</b></label>
                                                         </div>
                                                     </div>
+                                                   
                                                     <div class="row">
                                                         <div class="col-md-12 col-sm-12">
                                                             <div class="form-group">
-                                                                <button type="submit" class="btn btn-info">Actualizar Datos</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12 col-sm-12">
-                                                            <div class="form-group">
-                                                                <button class="btn btn-info" ng-click="History.openFiles()">Ver Archivos Digitalizados</button>
+                                                                <button ng-disabled="History.pacienteId==0" class="btn btn-info" ng-click="History.openFiles()">Ver Archivos Digitalizados</button>
                                                             </div>
                                                         </div>
                                                     </div>
