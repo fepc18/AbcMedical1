@@ -61,4 +61,6 @@ public class AbcMedicalContext : DbContext
     public System.Data.Entity.DbSet<Entities.ArchivoDigital.TipoAnexo> TipoAnexo { get; set; }
     public System.Data.Entity.DbSet<Entities.ArchivoDigital.Volumen> Volumen { get; set; }
 
+    public System.Data.Entity.DbSet<Entities.Seguridad.Permiso> Permiso { get; set; }
+
 }

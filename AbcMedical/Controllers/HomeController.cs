@@ -20,6 +20,11 @@ namespace AbcMedical.Controllers
                 ViewBag.Username = user.Login;
                 ViewBag.Title = "Home Page";
 
+                var perfilId = user.PerfilId;
+                Opciones opciones = new Opciones();
+                opciones.HistoriaClinica = estaOpcion(perfilId, "HistoriaClinica");
+                ViewBag.HistoriaClinica = opciones.HistoriaClinica;
+
                 return View(login);
             }
             else
@@ -47,7 +52,14 @@ namespace AbcMedical.Controllers
             return RedirectToAction("Index", "ArchivoDigital");
         }
 
-
+        public Boolean estaOpcion(int _perfilId, string _opcion)
+        {
+            Boolean resultado = false;
+            var opcion = db.Permiso.Where(x => x.Opcion == _opcion).Where(x => x.PerfilId == _perfilId).FirstOrDefault();
+            if (opcion != null)
+                resultado = true;
+            return resultado;
+        }
 
     }
 }

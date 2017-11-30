@@ -34,9 +34,9 @@
                         @Html.DisplayFor(modelItem => item.Descripcion)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.PerfilId }) |                        
-                        @Html.ActionLink("Permisos", "Permiso", new { id = item.PerfilId }) |  
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PerfilId })
+                        @Html.ActionLink("Editar", "Edit", new { id = item.PerfilId }) |                        
+                        @Html.ActionLink("Permisos", "Permiso", new { perfilId = item.PerfilId }) |  
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.PerfilId })
                     </td>
                 </tr>
             }

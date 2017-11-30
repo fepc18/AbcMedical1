@@ -193,6 +193,7 @@
     <Compile Include="Controllers\DiagnosticoController.cs" />
     <Compile Include="Controllers\EspecialidadController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\MatrizSeguridadController.cs" />
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
@@ -2504,6 +2505,10 @@
     <Content Include="Views\AdministracionReportes\PacientesActivos.cshtml" />
     <Content Include="Views\AdministracionReportes\FiltrosHistoriasCreadas.cshtml" />
     <Content Include="Views\AdministracionReportes\HistoriasCreadas.cshtml" />
+    <Content Include="Views\Log\Index.cshtml" />
+    <Content Include="Views\Perfil\Permiso.cshtml" />
+    <Content Include="Views\Usuario\ChangePassword.cshtml" />
+    <Content Include="Views\MatrizSeguridad\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

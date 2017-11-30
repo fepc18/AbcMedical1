@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -54,12 +53,13 @@
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li class="sub-menu dcjq-parent-li">
                             <a href="~/Home/Index"><i class="fa fa-home"></i> Home</a>
-                            <a href="~/Usuario"><i class="fa fa-users"></i> Usuarios</a>
-                            <a href="~/Perfil"><i class="fa fa-lock"></i> Perfiles</a>
-                            <a href="~/MatrizSeguridad"><i class="fa fa-list-ul"></i> Matriz de Seguridad</a>
-                            <a href="~/Log"><i class="fa fa-history"></i> Bitácora</a>
+                                <a href="~/Usuario"><i class="fa fa-users"></i> Usuarios</a>
+                                <a href="~/Perfil"><i class="fa fa-lock"></i> Perfiles</a>
+                                <a href="~/MatrizSeguridad"><i class="fa fa-list-ul"></i> Matriz de Seguridad</a>
+                                <a href="~/Log"><i class="fa fa-history"></i> Bitácora</a>
+                         
                         </li>
-                        
+
                     </ul>
                     <br />
                 </div>
@@ -72,13 +72,9 @@
                         <p>&copy; @DateTime.Now.Year - Abc Medical</p>
                     </footer>
                 </div>
-
             </div>
 
-
-
         </section>
-
     </section>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -55,14 +55,18 @@
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li class="sub-menu dcjq-parent-li">
                             <a href="~/Home/Index"><i class="fa fa-home"></i> Home</a>
-                            <a href="~/CargarArchivoDigital/Create"><i class="fa fa-paperclip"></i> Cargar Archivo Digital</a>
-                            <a href="~/TipoAnexo"><i class="fa fa-list"></i> Tipos de Anexo</a>
-                            <a href="~/Volumen"><i class="fa fa-hdd-o"></i> Volumen de almacenamiento</a>                            
-                        </li>                        
-                    </ul>    
-                    <br/>              
+                           
+                                <a href="~/CargarArchivoDigital/Create"><i class="fa fa-paperclip"></i> Cargar Archivo Digital</a>
+                                <a href="~/TipoAnexo"><i class="fa fa-list"></i> Tipos de Anexo</a>
+                            
+                            
+                                <a href="~/Volumen"><i class="fa fa-hdd-o"></i> Volumen de almacenamiento</a>
+                            
+                        </li>
+                    </ul>
+                    <br />
                 </div>
-                <div class="col-md-10 col-xs-12" >
+                <div class="col-md-10 col-xs-12">
                     <div class="row">
                         @RenderBody()
                     </div>
@@ -71,16 +75,16 @@
                         <p>&copy; @DateTime.Now.Year - Abc Medical</p>
                     </footer>
                 </div>
-                
+
             </div>
 
-           
-            
+
+
         </section>
-               
-        </section>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+
+    </section>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

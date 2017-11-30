@@ -88,6 +88,7 @@
     <Compile Include="Seguridad\Log.cs" />
     <Compile Include="Seguridad\Login.cs" />
     <Compile Include="Seguridad\Perfil.cs" />
+    <Compile Include="Seguridad\Permisos.cs" />
     <Compile Include="Seguridad\Usuario.cs" />
     <Compile Include="Utilities\Response.cs" />
   </ItemGroup>
